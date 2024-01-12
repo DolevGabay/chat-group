@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import './Chat.css';
+import animals from './images/Animals';
 
 const Chat = () => {
   const location = useLocation();
   const username = location.state && location.state.username;
+  const port = location.state && location.state.port;
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [socket, setSocket] = useState(null);
+  const [selectedAnimal, setSelectedAnimal] = useState(null);
+  const [notification, setNotification] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     // Create a WebSocket connection
-    const newSocket = new WebSocket('ws://localhost:3001');
+    const newSocket = new WebSocket(`ws://localhost:${port}`);
     setSocket(newSocket);
 
     newSocket.addEventListener('open', (event) => {
@@ -21,12 +26,16 @@ const Chat = () => {
     });
 
     newSocket.addEventListener('message', (event) => {
-        const receivedMessages = JSON.parse(event.data);
-        if (receivedMessages.type === 'message') {
-          setMessages(receivedMessages.messages);
-        }
-        else if (receivedMessages.type === 'notification' && receivedMessages.username !== username )
-        alert(receivedMessages.serverNotification);
+      const receivedMessages = JSON.parse(event.data);
+      if (receivedMessages.type === 'message') {
+        setMessages(receivedMessages.messages);
+        console.log(receivedMessages.messages);
+      } else if (receivedMessages.type === 'notification' && receivedMessages.username !== username) {
+        setNotification(receivedMessages.serverNotification);
+        setTimeout(() => {
+          setNotification(null);
+        }, 3000); 
+      }
     });
 
     newSocket.addEventListener('close', (event) => {
@@ -62,31 +71,63 @@ const Chat = () => {
     navigate('/');
   };
 
+  const handleInputChange = (event) => {
+    setNewMessage(event.target.value);
+  };
+
+  useEffect(() => {
+    if (!selectedAnimal) {
+      const availableAnimals = animals.filter(animal => animal !== selectedAnimal);
+      const randomAnimal = availableAnimals[Math.floor(Math.random() * availableAnimals.length)];
+      setSelectedAnimal(randomAnimal);
+    }
+  }, [selectedAnimal]);
+
   return (
     <div>
-      <h2>Chat</h2>
-      <p>Welcome, {username || 'Guest'}!</p>
+      <div className="chat">
+        <div className="chat-title">
+          <h1>{username} </h1>
+          <button type="submit" className="quit-btn" onClick={handleExitChat}>
+            Quit
+          </button>
+          <figure className="avatar">
+            <img src={selectedAnimal} alt="Profile Avatar" />
+          </figure>
+        </div>
 
-      <div style={{ height: '200px', border: '1px solid #ccc', overflowY: 'auto' }}>
+        <div className="messages-content">
         {messages.map((message, index) => (
-          <div key={index}>
-            <strong>{message.userName}:</strong> {message.text}
+          <div className={message.userName === username ? 'left' : 'right'} key={index}>
+            <span>{message.userName}:</span>
+            <p>{message.text}</p>
           </div>
         ))}
       </div>
 
-      <div>
+        <div className="message-box">
         <textarea
-          rows="3"
-          cols="50"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-      </div>
+            type="text"
+            className="message-input"
+            placeholder="Type message..."
+            value={newMessage}
+            onChange={handleInputChange}
+          ></textarea>
+          <button type="submit" className="message-submit" onClick={handleSendMessage}>
+            Send
+          </button>
 
-      <div>
-        <button onClick={handleSendMessage}>Send</button>
-        <button onClick={handleExitChat}>Exit</button>
+        </div>
+      </div>
+      <div className="bg"></div>
+
+      <div id="notification-modal" style={{ display: notification ? 'block' : 'none' }}>
+        <img
+          src="https://static-00.iconduck.com/assets.00/notification-icon-1661x2048-24eo7df9.png"  
+          alt="Information Icon"
+          style={{ width: '24px', height: '24px', marginRight: '8px' }} 
+        />
+        <p id="notification-message">{notification}</p>
       </div>
     </div>
   );

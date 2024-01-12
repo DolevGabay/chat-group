@@ -1,0 +1,415 @@
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"Dolev"}
+INFO:root:New user connected: Dolev
+INFO:root:clients_by_username: {'Dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f87e8913010>, 1705072494.553424)}
+INFO:root:Received message from the client: {"type":"message","userName":"Dolev","text":"heyyyyyy"}
+INFO:root:Closed connection with None
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"Dolev"}
+INFO:root:New user connected: Dolev
+INFO:root:clients_by_username: {'Dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0913d30>, 1705072551.0046442)}
+INFO:root:Received message from the client: {"type":"message","userName":"Dolev","text":"heyyy"}
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"Shir"}
+INFO:root:New user connected: Shir
+INFO:root:clients_by_username: {'Dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0913d30>, 1705072551.0046442), 'Shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0a10550>, 1705072609.09658)}
+INFO:root:Received message from the client: {"type":"message","userName":"Shir","text":"heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"}
+INFO:root:Received message from the client: {"type":"message","userName":"Shir","text":"how are me "}
+INFO:root:Received message from the client: {"type":"message","userName":"Dolev","text":"good"}
+INFO:root:Received message from the client: {"type":"message","userName":"Shir","text":"ownload 131100 Animal Avatar Vector Icons for commercial and personal use. Available for free or premium in line, flat, gradient, isometric, glyph, ..."}
+INFO:root:Received message from the client: {"type":"message","userName":"Shir","text":"hrh hehhshhs hhhh es se vnjnjnjnjnse jnnnjn\njdfbjv bdjfvjndfjnvj njnjnjnjn jndfjnsjv jndfj nvjdfnjvndfjnvjdfnjvndsjfnvjdfnjvdfjvnsdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"Shir"}
+INFO:root:Closed connection with Shir
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 61, in handle_client
+    await send_to_all_user_disconnect(message_json["username"])
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 37, in send_to_all_user_disconnect
+    logging,info(f"User disconnected: {username}")
+NameError: name 'info' is not defined
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"Dolev"}
+INFO:root:Closed connection with Dolev
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 61, in handle_client
+    await send_to_all_user_disconnect(message_json["username"])
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 37, in send_to_all_user_disconnect
+    logging,info(f"User disconnected: {username}")
+NameError: name 'info' is not defined
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0a104f0>, 1705072725.952399)}
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0a104f0>, 1705072725.952399), 's': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc1d0a10a30>, 1705072728.8524108)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:Closed connection with d
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 61, in handle_client
+    await send_to_all_user_disconnect(message_json["username"])
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 37, in send_to_all_user_disconnect
+    logging,info(f"User disconnected: {username}")
+NameError: name 'info' is not defined
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:Closed connection with s
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 61, in handle_client
+    await send_to_all_user_disconnect(message_json["username"])
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 37, in send_to_all_user_disconnect
+    logging,info(f"User disconnected: {username}")
+NameError: name 'info' is not defined
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fee9849beb0>, 1705072868.128222)}
+INFO:root:Received message from the client: {"type":"message","userName":"d","text":"dfvdfv"}
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fee9849beb0>, 1705072868.128222), 's': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fee9849abc0>, 1705072883.7572548)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:Closed connection with s
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 61, in handle_client
+    await send_to_all_user_disconnect(message_json["username"])
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 37, in send_to_all_user_disconnect
+    logging,info(f"User disconnected: {username}")
+NameError: name 'info' is not defined
+INFO:websockets.server:connection closed
+INFO:root:Closed connection with None
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563d00>, 1705072920.761652)}
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563d00>, 1705072920.761652), 's': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda005635b0>, 1705072922.9400299)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:User disconnected: d
+INFO:root:clients_by_username: {'s': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda005635b0>, 1705072922.9400299)}
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"message","userName":"s","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:User disconnected: s
+INFO:root:clients_by_username: {}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232)}
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232), 's': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d0d90>, 1705073663.917182)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:User disconnected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232), 's': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d12a0>, 1705073692.799763)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:User disconnected: s
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dd"}
+INFO:root:New user connected: dd
+INFO:root:clients_by_username: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d02e0>, 1705073610.0715232), 'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:User disconnected: d
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051), 'd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d0fd0>, 1705073723.1709352)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:User disconnected: d
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"ffff"}
+INFO:root:New user connected: ffff
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051), 'ffff': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d0580>, 1705073807.4799418)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"ffff"}
+INFO:root:User disconnected: ffff
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"vdfvdfv"}
+INFO:root:New user connected: vdfvdfv
+INFO:root:clients_by_username: {'dd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1540>, 1705073709.8837051), 'vdfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1960>, 1705073859.4961028)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dd"}
+INFO:root:User disconnected: dd
+INFO:root:clients_by_username: {'vdfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1960>, 1705073859.4961028)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"sdsdc"}
+INFO:root:New user connected: sdsdc
+INFO:root:clients_by_username: {'vdfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1960>, 1705073859.4961028), 'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1e70>, 1705073883.245929)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"vdfvdfv"}
+INFO:root:User disconnected: vdfvdfv
+INFO:root:clients_by_username: {'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1e70>, 1705073883.245929)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"sdsdc"}
+INFO:root:New user connected: sdsdc
+INFO:root:clients_by_username: {'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563520>, 1705074048.0426629)}
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"vvv"}
+INFO:root:New user connected: vvv
+INFO:root:clients_by_username: {'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563520>, 1705074048.0426629), 'vvv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d1b40>, 1705074056.457419)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"vvv"}
+INFO:root:User disconnected: vvv
+INFO:root:clients_by_username: {'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563520>, 1705074048.0426629)}
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv"}
+INFO:root:New user connected: dfvdfv
+INFO:root:clients_by_username: {'sdsdc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda00563520>, 1705074048.0426629), 'dfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d0700>, 1705074161.9456809)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"sdsdc"}
+INFO:root:User disconnected: sdsdc
+INFO:root:clients_by_username: {'dfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda101d0700>, 1705074161.9456809)}
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv"}
+INFO:root:User disconnected: dfvdfv
+INFO:root:clients_by_username: {}
+INFO:websockets.server:connection closed
