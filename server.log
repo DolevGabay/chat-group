@@ -1835,3 +1835,849 @@ INFO:root:Client disconnected.
 INFO:websockets.server:connection closed
 INFO:root:WebSocket server interrupted. Closing connections...
 INFO:root:WebSocket server thread joined. Exiting.
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 71, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvfdv"}
+INFO:root:New user connected: dfvfdv
+INFO:root:CLIENTS_BY_USERNAME: {'dfvfdv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff820913d30>, 1705145568.016387)}
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 71, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvvf"}
+INFO:root:New user connected: dfvvf
+INFO:root:CLIENTS_BY_USERNAME: {'dfvfdv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff820913d30>, 1705145568.016387), 'dfvvf': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff820912650>, 1705145569.944226)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvvf"}
+INFO:root:User disconnected: dfvvf
+INFO:root:CLIENTS_BY_USERNAME: {'dfvfdv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff820913d30>, 1705145568.016387)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvfdv"}
+INFO:root:User disconnected: dfvfdv
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:WebSocket server interrupted. Closing connections...
+INFO:root:WebSocket server thread joined. Exiting.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 14:55:11] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 14:55:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 14:56:45] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 14:56:48] "GET /test HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 14:57:27] "GET /start_websocket_server/8001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:8001
+INFO:websockets.server:server listening on [::1]:8001
+INFO:root:WebSocket server listening on ws://localhost:8001
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:00:03] "[33mGET /start_websocket_server/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:00:22] "[33mGET /start_websocket_server/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:01:58] "[33mGET /start_websocket_server/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:02:25] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa050>, 1705150945.4768808)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fdvdfv"}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fvdfvfv"}
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:03:08] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:websockets.server:server listening on [::1]:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 65, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"cccc"}
+INFO:root:New user connected: cccc
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa050>, 1705150945.4768808), 'cccc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa650>, 1705150988.8556821)}
+INFO:root:Received message from the client: {"type":"message","userName":"cccc","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"cccc"}
+INFO:root:User disconnected: cccc
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa050>, 1705150945.4768808)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:03:36] "GET /start_websocket_server/3003 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3003
+INFO:websockets.server:server listening on 127.0.0.1:3003
+INFO:root:WebSocket server listening on ws://localhost:3003
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"ervev"}
+INFO:root:New user connected: ervev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa050>, 1705150945.4768808), 'ervev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600abd60>, 1705151016.089431)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"ervev"}
+INFO:root:User disconnected: ervev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fac600aa050>, 1705150945.4768808)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:04:23] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:04:35] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:websockets.server:server listening on [::1]:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:CLIENTS_BY_USERNAME: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb2d00ab040>, 1705151075.332395)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"shir"}
+INFO:root:User disconnected: shir
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:05:55] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466)}
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466), 'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa320>, 1705151290.49246)}
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dv"}
+INFO:root:New user connected: dv
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466), 'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa320>, 1705151290.49246), 'dv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa740>, 1705151290.506434)}
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:08:20] "[33mGET /start_websocket_server/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:08:25] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3002
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 65, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dddd"}
+INFO:root:New user connected: dddd
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466), 'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa320>, 1705151290.49246), 'dv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa740>, 1705151290.506434), 'dddd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300abc40>, 1705151305.924853)}
+INFO:root:Received message from the client: {"type":"message","userName":"dddd","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dddd"}
+INFO:root:User disconnected: dddd
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466), 'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa320>, 1705151290.49246), 'dv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa740>, 1705151290.506434)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300a99f0>, 1705151290.476466), 'dv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fca300aa740>, 1705151290.506434)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:09:56] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dddd"}
+INFO:root:New user connected: dddd
+INFO:root:CLIENTS_BY_USERNAME: {'dddd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f98380a99f0>, 1705151396.808479)}
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:10:12] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:websockets.server:server listening on [::1]:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"sssss"}
+INFO:root:New user connected: sssss
+INFO:root:CLIENTS_BY_USERNAME: {'dddd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f98380a99f0>, 1705151396.808479), 'sssss': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f98380ab190>, 1705151412.473526)}
+INFO:root:Received message from the client: {"type":"message","userName":"sssss","text":"dgbdgb"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dddd"}
+INFO:root:User disconnected: dddd
+INFO:root:CLIENTS_BY_USERNAME: {'sssss': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f98380ab190>, 1705151412.473526)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"sssss"}
+INFO:root:User disconnected: sssss
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:19:51] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:20:07] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3002
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 57, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dddd"}
+INFO:root:New user connected: dddd
+INFO:root:Received message from the client: {"type":"message","userName":"dddd","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"message","userName":"dddd","text":""}
+INFO:root:Received message from the client: {"type":"message","userName":"dddd","text":"dfvdfvvv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dddd"}
+INFO:root:User disconnected: dddd
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:20:38] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:21:37] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 65, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3c0d2a1d0>, 1705152114.496425)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fgbfgb"}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":""}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"gbgb"}
+INFO:root:Starting WebSocket server on port 3002
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:22:06] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:websockets.server:server listening on [::1]:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 65, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"fgfg"}
+INFO:root:New user connected: fgfg
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3c0d2a1d0>, 1705152114.496425), 'fgfg': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3c0d2ab00>, 1705152126.0735)}
+INFO:root:Received message from the client: {"type":"message","userName":"fgfg","text":"vbvb vb"}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 65, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3c0d2a8f0>, 1705152132.907469), 'fgfg': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3c0d2ab00>, 1705152126.0735)}
+INFO:root:Client disconnected.
+INFO:root:Closed connection with dolev
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:22:35] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"ddd"}
+INFO:root:New user connected: ddd
+INFO:root:CLIENTS_BY_USERNAME: {'ddd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ffaa80a9a20>, 1705152155.634122)}
+INFO:root:Received message from the client: {"type":"message","userName":"ddd","text":"ddd"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"ddd"}
+INFO:root:User disconnected: ddd
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:25:08] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff468f69a20>, 1705152308.942505)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fvfv"}
+INFO:root:Starting WebSocket server on port 3002
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:25:30] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3002
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:CLIENTS_BY_USERNAME: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff468f6a650>, 1705152330.119112)}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"ggg"}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"fgbfgb"}
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:25:53] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"segev"}
+INFO:root:New user connected: segev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff468f69a20>, 1705152308.942505), 'segev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff468f6bbe0>, 1705152354.017966)}
+INFO:root:Received message from the client: {"type":"message","userName":"segev","text":"fbfgb"}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fgbfgb"}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'segev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff468f6bbe0>, 1705152354.017966)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:36:49] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb6400a9d80>, 1705153010.021673)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fgbfgb"}
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:37:08] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb6400a9d80>, 1705153010.021673), 'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb6400aa590>, 1705153028.18045)}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"gbfgb"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"shir"}
+INFO:root:User disconnected: shir
+INFO:root:CLIENTS_BY_USERNAME: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb6400a9d80>, 1705153010.021673)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Starting WebSocket server on port 3002
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:37:26] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:websockets.server:server listening on [::1]:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 66, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:CLIENTS_BY_USERNAME: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb6400aaa10>, 1705153046.430431)}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"fgbfgbfgb"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"shir"}
+INFO:root:User disconnected: shir
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:44:24] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fd5780a96c0>, 1705153464.418554)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:User disconnected: d
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server thread.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 73, in handle_client
+    await self.server.close()
+TypeError: object NoneType can't be used in 'await' expression
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closing
+INFO:websockets.server:server closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:46:55] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"d"}
+INFO:root:New user connected: d
+INFO:root:CLIENTS_BY_USERNAME: {'d': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8af00a96f0>, 1705153615.967526)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"d"}
+INFO:root:User disconnected: d
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 77, in handle_client
+    await self.check_and_close_server()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 48, in check_and_close_server
+    await self.server.close()
+TypeError: object NoneType can't be used in 'await' expression
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closing
+INFO:websockets.server:server closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:48:02] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"ssss"}
+INFO:root:New user connected: ssss
+INFO:root:CLIENTS_BY_USERNAME: {'ssss': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fcb780a96f0>, 1705153682.795561)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"ssss"}
+INFO:root:User disconnected: ssss
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 77, in handle_client
+    await self.check_and_close_server()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 48, in check_and_close_server
+    await self.server.close()
+TypeError: object NoneType can't be used in 'await' expression
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closing
+INFO:websockets.server:server closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:48:49] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:50:02] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"s"}
+INFO:root:New user connected: s
+INFO:root:CLIENTS_BY_USERNAME: {'s': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f9e800a96f0>, 1705153802.2787452)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"s"}
+INFO:root:User disconnected: s
+INFO:root:CLIENTS_BY_USERNAME: {}
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server thread.
+INFO:websockets.server:server closing
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:50:24] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:50:55] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:51:15] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv"}
+INFO:root:New user connected: dfvdfv
+INFO:root:CLIENTS_BY_USERNAME: {'dfvdfv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc3a00a96f0>, 1705153875.242555)}
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:55:13] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 86, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fda10024430>, 1705154113.811431)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:No clients connected. Closing the WebSocket server.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 81, in handle_client
+    await self.check_and_close_server()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 43, in check_and_close_server
+    await self.server.close()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 91, in handle_client
+    await self.check_and_close_server()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 43, in check_and_close_server
+    await self.server.close()
+TypeError: object NoneType can't be used in 'await' expression
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closing
+INFO:websockets.server:server closed
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:55:27] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:56:42] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f9a60ea3ee0>, 1705154202.397172)}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from ports_in_used
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:56:42] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 81, in handle_client
+    await self.check_and_close_server()
+TypeError: object NoneType can't be used in 'await' expression
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closing
+INFO:websockets.server:server closed
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:57:30] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"doelv"}
+INFO:root:New user connected: doelv
+INFO:root:Clients connected: {'doelv': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8918f93ee0>, 1705154250.331672)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"doelv"}
+INFO:root:User disconnected: doelv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from ports_in_used
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:57:35] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:57:35] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:57:46] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 86, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8900025f60>, 1705154266.9021409)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"dfvdfv"}
+INFO:root:Starting WebSocket server on port 3002
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:09] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:server listening on [::1]:3002
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 86, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:Clients connected: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8900027040>, 1705154289.480646)}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"dfvdfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"shir"}
+INFO:root:User disconnected: shir
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3002 removed from ports_in_used
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:12] "POST /remove_port/3002 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3002 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:12] "POST /remove_port/3002 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3002 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:20] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection rejected (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"shir"}
+INFO:root:New user connected: shir
+INFO:root:Clients connected: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8900025f60>, 1705154266.9021409), 'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f89000268c0>, 1705154300.431427)}
+INFO:root:Received message from the client: {"type":"message","userName":"shir","text":"fgfgb"}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","text":"fgfgb"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:Clients connected: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f89000268c0>, 1705154300.431427)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:32] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Client disconnected.
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 86, in handle_client
+    username = message_json.get("username")
+UnboundLocalError: local variable 'message_json' referenced before assignment
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'shir': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f89000268c0>, 1705154300.431427), 'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8900026c20>, 1705154312.9703958)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"shir"}
+INFO:root:User disconnected: shir
+INFO:root:Clients connected: {'dolev': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f8900026c20>, 1705154312.9703958)}
+INFO:root:Client disconnected.
+INFO:websockets.server:connection closed
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev"}
+INFO:root:User disconnected: dolev
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from ports_in_used
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:42] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [13/Jan/2024 15:58:42] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed

@@ -6,20 +6,30 @@ const Connect = () => {
   const [username, setUsername] = useState('');
   const [port, setPort] = useState('');
   const navigate = useNavigate();
-  const DEFAULT_PORT = "3001";
 
   const handle_connect = () => {
     console.log(`Connecting with username: ${username} and port: ${port}`);
     
-    if (port === '') {
-      navigate('/chat', { state: { username, port: DEFAULT_PORT } }); // default port
-    } else if (isNaN(port)) {
+    if (isNaN(port)) {
       alert('Port must be a valid number');
-      setPort(''); 
+      setPort('');
     } else {
-      navigate('/chat', { state: { username, port } });
+      // Send HTTP request to start the WebSocket server
+      fetch(`http://localhost:8000/start_websocket_server/${port}`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.message);
+        navigate('/chat', { state: { username, port } });
+      })
+      .catch(error => {
+        console.error('Error starting WebSocket server:', error);
+        // Handle the error as needed
+      });
     }
-  };  
+  };
+  
   
   const handle_username_change = (event) => {
     setUsername(event.target.value);
@@ -45,7 +55,7 @@ const Connect = () => {
             </button>
           </form>
           <div className="register-forget opacity">
-            <a>DEFAULT PORT: {DEFAULT_PORT}</a>           
+            <a>DEFAULT PORT: 8000</a>           
           </div>
         </div>
         <div className="circle circle-two"></div>

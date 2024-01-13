@@ -71,6 +71,7 @@ const Chat = () => {
 
   return (
     <div>
+      <h1 className="title">{port}</h1>
       <div className="chat">
         <div className="chat-title">
           <h1>{username} </h1>
