@@ -71,10 +71,10 @@ const Chat = () => {
 
   return (
     <div>
-      <h1 className="title">{port}</h1>
       <div className="chat">
         <div className="chat-title">
           <h1>{username} </h1>
+          <h2>{port}</h2>
           <button type="submit" className="quit-btn" onClick={handle_exit_chat}>
             Quit
           </button>
