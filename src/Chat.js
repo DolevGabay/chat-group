@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import WebSocketService from './WebSocketService'; // Import WebSocketService
 import './Chat.css';
 import animals from './images/Animals';
 
@@ -9,78 +10,64 @@ const Chat = () => {
   const port = location.state && location.state.port;
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const [socket, setSocket] = useState(null);
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [notification, setNotification] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Create a WebSocket connection
-    const newSocket = new WebSocket(`ws://localhost:${port}`);
-    setSocket(newSocket);
-
-    newSocket.addEventListener('open', (event) => {  // event listener for connection open
-      console.log('Connected to the server');
-      newSocket.send(JSON.stringify({ type: 'connect', username }));
-    });
-    
-    newSocket.addEventListener('message', (event) => { // event listener for incoming messages
-      const receivedMessages = JSON.parse(event.data);
-      if (receivedMessages.type === 'message') {
-        setMessages(receivedMessages.messages);
-        console.log(receivedMessages.messages);
-      } else if (receivedMessages.type === 'notification' && receivedMessages.username !== username) {
-        setNotification(receivedMessages.serverNotification);
-        setTimeout(() => {
-          setNotification(null);
-        }, 3000); 
-      }
-    });
-
-    newSocket.addEventListener('close', (event) => { // event listener for connection close
-      console.log('Connection closed');
-    });
+    // Connect to WebSocket when component mounts
+    WebSocketService.connect(username, port, setMessages, setNotification);
 
     return () => {
-        newSocket.close();
+      // Close WebSocket connection when component unmounts
+      WebSocketService.close();
     };
-  }, []);
+  }, [username, port]);
 
-  const handle_send_message = () => { // send message to server
-    if (socket && socket.readyState === WebSocket.OPEN) {
+  const handle_send_message = () => {
+    // Send message to the server
+    if (WebSocketService.socket && WebSocketService.socket.readyState === WebSocket.OPEN) {
       const messageObject = {
         type: 'message',
         userName: username,
         text: newMessage,
       };
 
-      socket.send(JSON.stringify(messageObject));
-
+      WebSocketService.sendMessage(messageObject);
       setNewMessage('');
     } else {
       console.error('WebSocket connection is not open.');
     }
   };
 
-  const handle_exit_chat = () => { // disconnect from server
-    if (socket && socket.readyState === WebSocket.OPEN) {
-        socket.send(JSON.stringify({ type: 'disconnect', username }));
-        socket.close();
-    }
+  const handle_exit_chat = () => {
+    // Disconnect from the server and navigate back to home
+    WebSocketService.disconnect(username);
     navigate('/');
   };
 
-  const handle_input_change = (event) => { // update new message
+  const handle_input_change = (event) => {
     setNewMessage(event.target.value);
   };
 
-  useEffect(() => { // select random animal image
+  useEffect(() => {
+    // Select random animal image when component mounts
     if (!selectedAnimal) {
       const availableAnimals = animals.filter(animal => animal !== selectedAnimal);
       const randomAnimal = availableAnimals[Math.floor(Math.random() * availableAnimals.length)];
       setSelectedAnimal(randomAnimal);
     }
   }, [selectedAnimal]);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setNotification(null);
+    }, 3000);
+  
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [notification]); 
 
   return (
     <div>

@@ -39,7 +39,7 @@ const Connect = () => {
           <h1 className="opacity">Log In</h1>
           <form>
             <input type="text" placeholder="USERNAME" value={username} onChange={handle_username_change} />
-            <input type="number" placeholder="PORT" value={port} onChange={handle_port_change} />
+            <input type="text" placeholder="PORT" value={port} onChange={handle_port_change} />
             <button className="opacity" type="button" onClick={handle_connect}>
               Connect
             </button>

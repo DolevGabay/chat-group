@@ -52,6 +52,7 @@ async def handle_client(websocket, path):
             message = await websocket.recv()
             logging.info(f"Received message from the client: {message}")
             message_json = json.loads(message)
+            
             if message_json["type"] == "message":
                 timestamp = time.time()
                 message_json["timestamp"] = timestamp
