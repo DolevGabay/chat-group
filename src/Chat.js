@@ -17,7 +17,7 @@ const Chat = () => {
   useEffect(() => {
     // Connect to WebSocket when component mounts
     WebSocketService.connect(username, port, setMessages, setNotification);
-
+    
     return () => {
       // Close WebSocket connection when component unmounts
       WebSocketService.close();
