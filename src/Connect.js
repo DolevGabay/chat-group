@@ -6,13 +6,13 @@ const Connect = () => {
   const [username, setUsername] = useState('');
   const [port, setPort] = useState('');
   const navigate = useNavigate();
+  const DEFAULT_PORT = "3001";
 
-  const handleConnect = () => {
+  const handle_connect = () => {
     console.log(`Connecting with username: ${username} and port: ${port}`);
     
     if (port === '') {
-      const defaultPort = "3001";
-      navigate('/chat', { state: { username, port: defaultPort } }); // default port
+      navigate('/chat', { state: { username, port: DEFAULT_PORT } }); // default port
     } else if (isNaN(port)) {
       alert('Port must be a valid number');
       setPort(''); 
@@ -21,11 +21,11 @@ const Connect = () => {
     }
   };  
   
-  const handleUsernameChange = (event) => {
+  const handle_username_change = (event) => {
     setUsername(event.target.value);
   };
 
-  const handlePortChange = (event) => {
+  const handle_port_change = (event) => {
     setPort(event.target.value);
   };
 
@@ -38,14 +38,14 @@ const Connect = () => {
           <h1 className="opacity">Chat</h1>
           <h1 className="opacity">Log In</h1>
           <form>
-            <input type="text" placeholder="USERNAME" value={username} onChange={handleUsernameChange} />
-            <input type="text" placeholder="PORT" value={port} onChange={handlePortChange} />
-            <button className="opacity" type="button" onClick={handleConnect}>
+            <input type="text" placeholder="USERNAME" value={username} onChange={handle_username_change} />
+            <input type="number" placeholder="PORT" value={port} onChange={handle_port_change} />
+            <button className="opacity" type="button" onClick={handle_connect}>
               Connect
             </button>
           </form>
           <div className="register-forget opacity">
-              <a>DEFAULT PORT: 3001</a>           
+            <a>DEFAULT PORT: {DEFAULT_PORT}</a>           
           </div>
         </div>
         <div className="circle circle-two"></div>

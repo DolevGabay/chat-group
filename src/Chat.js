@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Chat.css';
 import animals from './images/Animals';
 
@@ -20,12 +19,12 @@ const Chat = () => {
     const newSocket = new WebSocket(`ws://localhost:${port}`);
     setSocket(newSocket);
 
-    newSocket.addEventListener('open', (event) => {
+    newSocket.addEventListener('open', (event) => {  // event listener for connection open
       console.log('Connected to the server');
       newSocket.send(JSON.stringify({ type: 'connect', username }));
     });
-
-    newSocket.addEventListener('message', (event) => {
+    
+    newSocket.addEventListener('message', (event) => { // event listener for incoming messages
       const receivedMessages = JSON.parse(event.data);
       if (receivedMessages.type === 'message') {
         setMessages(receivedMessages.messages);
@@ -38,7 +37,7 @@ const Chat = () => {
       }
     });
 
-    newSocket.addEventListener('close', (event) => {
+    newSocket.addEventListener('close', (event) => { // event listener for connection close
       console.log('Connection closed');
     });
 
@@ -47,7 +46,7 @@ const Chat = () => {
     };
   }, []);
 
-  const handleSendMessage = () => {
+  const handle_send_message = () => { // send message to server
     if (socket && socket.readyState === WebSocket.OPEN) {
       const messageObject = {
         type: 'message',
@@ -63,7 +62,7 @@ const Chat = () => {
     }
   };
 
-  const handleExitChat = () => {
+  const handle_exit_chat = () => { // disconnect from server
     if (socket && socket.readyState === WebSocket.OPEN) {
         socket.send(JSON.stringify({ type: 'disconnect', username }));
         socket.close();
@@ -71,11 +70,11 @@ const Chat = () => {
     navigate('/');
   };
 
-  const handleInputChange = (event) => {
+  const handle_input_change = (event) => { // update new message
     setNewMessage(event.target.value);
   };
 
-  useEffect(() => {
+  useEffect(() => { // select random animal image
     if (!selectedAnimal) {
       const availableAnimals = animals.filter(animal => animal !== selectedAnimal);
       const randomAnimal = availableAnimals[Math.floor(Math.random() * availableAnimals.length)];
@@ -88,7 +87,7 @@ const Chat = () => {
       <div className="chat">
         <div className="chat-title">
           <h1>{username} </h1>
-          <button type="submit" className="quit-btn" onClick={handleExitChat}>
+          <button type="submit" className="quit-btn" onClick={handle_exit_chat}>
             Quit
           </button>
           <figure className="avatar">
@@ -111,9 +110,9 @@ const Chat = () => {
             className="message-input"
             placeholder="Type message..."
             value={newMessage}
-            onChange={handleInputChange}
+            onChange={handle_input_change}
           ></textarea>
-          <button type="submit" className="message-submit" onClick={handleSendMessage}>
+          <button type="submit" className="message-submit" onClick={handle_send_message}>
             Send
           </button>
 
