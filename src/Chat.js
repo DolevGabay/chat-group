@@ -8,6 +8,7 @@ const Chat = () => {
   const location = useLocation();
   const username = location.state && location.state.username;
   const port = location.state && location.state.port;
+  const uuid = location.state && location.state.uuid;
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [selectedAnimal, setSelectedAnimal] = useState(null);
@@ -16,8 +17,8 @@ const Chat = () => {
 
   useEffect(() => {
     // Connect to WebSocket when component mounts
-    WebSocketService.connect(username, port, setMessages, setNotification);
-    
+    WebSocketService.connect(username, port, uuid, setMessages, setNotification);
+
     return () => {
       // Close WebSocket connection when component unmounts
       WebSocketService.close();
@@ -30,6 +31,7 @@ const Chat = () => {
       const messageObject = {
         type: 'message',
         userName: username,
+        uuid: uuid,
         text: newMessage,
       };
 
@@ -42,7 +44,7 @@ const Chat = () => {
 
   const handle_exit_chat = () => {
     // Disconnect from the server and navigate back to home
-    WebSocketService.disconnect(username);
+    WebSocketService.disconnect(username, uuid);
     navigate('/');
   };
 
@@ -85,7 +87,7 @@ const Chat = () => {
 
         <div className="messages-content">
         {messages.map((message, index) => (
-          <div className={message.userName === username ? 'left' : 'right'} key={index}>
+          <div className={message.uuid === uuid ? 'left' : 'right'} key={index}>
             <span>{message.userName}:</span>
             <p>{message.text}</p>
           </div>

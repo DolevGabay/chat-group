@@ -4,12 +4,12 @@ class WebSocketService {
       this.socket = null;
     }
   
-    connect(username, port, onMessageCallback, onNotificationCallback, onConnectCallback, onCloseCallback) {
+    connect(username, port, uuid, onMessageCallback, onNotificationCallback, onConnectCallback, onCloseCallback) {
       this.socket = new WebSocket(`ws://localhost:${port}`);
   
       this.socket.addEventListener('open', (event) => {
         console.log('Connected to the server');
-        this.socket.send(JSON.stringify({ type: 'connect', username }));
+        this.socket.send(JSON.stringify({ type: 'connect', username, uuid }));
         onConnectCallback && onConnectCallback();
       });
   
@@ -17,7 +17,7 @@ class WebSocketService {
         const receivedMessages = JSON.parse(event.data);
         if (receivedMessages.type === 'message') {
           onMessageCallback && onMessageCallback(receivedMessages.messages);
-        } else if (receivedMessages.type === 'notification' && receivedMessages.username !== username) {
+        } else if (receivedMessages.type === 'notification' && receivedMessages.uuid !== uuid) {
           onNotificationCallback && onNotificationCallback(receivedMessages.serverNotification);
         } 
       });
@@ -36,9 +36,9 @@ class WebSocketService {
       }
     }
   
-    disconnect(username) {
+    disconnect(username, uuid) {
       if (this.socket && this.socket.readyState === WebSocket.OPEN) {
-        this.socket.send(JSON.stringify({ type: 'disconnect', username }));
+        this.socket.send(JSON.stringify({ type: 'disconnect', username, uuid }));
         this.socket.close();
       }
     }

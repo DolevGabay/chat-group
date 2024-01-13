@@ -7,29 +7,34 @@ const Connect = () => {
   const [port, setPort] = useState('');
   const navigate = useNavigate();
 
-  const handle_connect = () => {
-    console.log(`Connecting with username: ${username} and port: ${port}`);
-    
-    if (isNaN(port)) {
-      alert('Port must be a valid number');
-      setPort('');
-    } else {
+  const handle_connect = async () => {
+    try {
+      if (isNaN(port)) {
+        alert('Port must be a valid number');
+        setPort('');
+        return;
+      }
+  
       // Send HTTP request to start the WebSocket server
-      fetch(`http://localhost:8000/start_websocket_server/${port}`, {
+      const serverResponse = await fetch(`http://localhost:8000/start_websocket_server/${port}`, {
         method: 'GET',
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.message);
-        navigate('/chat', { state: { username, port } });
-      })
-      .catch(error => {
-        console.error('Error starting WebSocket server:', error);
-        // Handle the error as needed
       });
+      const serverData = await serverResponse.json();
+      console.log(serverData.message);
+      const uuid = generate_uuid();
+      navigate('/chat', { state: { username, port, uuid } });
+    } catch (error) {
+      console.error('Error:', error);
     }
   };
-  
+
+  const generate_uuid = () => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  };  
   
   const handle_username_change = (event) => {
     setUsername(event.target.value);

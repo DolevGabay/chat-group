@@ -22,18 +22,18 @@ class WebSocketServer:
                         filtered_messages.append(message)
                 await client[0].send(json.dumps({"type": "message", "messages": filtered_messages}))
 
-    async def send_to_all_new_user(self, username):
+    async def send_to_all_new_user(self, username, uuid):
         logging.info(f"New user connected: {username}")
         logging.info(f"Clients connected: {self.clients_by_username}")
         if self.clients_by_username:
-            tasks = [asyncio.create_task(client[0].send(json.dumps({"type": "notification", "username": username, "serverNotification": f"New client connected: {username}"}))) for client in self.clients_by_username.values()]
+            tasks = [asyncio.create_task(client[0].send(json.dumps({"type": "notification", "uuid": uuid, "serverNotification": f"New client connected: {username}"}))) for client in self.clients_by_username.values()]
             await asyncio.gather(*tasks)
 
-    async def send_to_all_user_disconnect(self, username):
+    async def send_to_all_user_disconnect(self, username, uuid):
         logging.info(f"User disconnected: {username}")
         logging.info(f"Clients connected: {self.clients_by_username}")
         if self.clients_by_username:
-            tasks = [asyncio.create_task(client[0].send(json.dumps({"type": "notification", "username": username, "serverNotification": f"User disconnected: {username}"}))) for client in self.clients_by_username.values()]
+            tasks = [asyncio.create_task(client[0].send(json.dumps({"type": "notification", "uuid": uuid, "serverNotification": f"User disconnected: {username}"}))) for client in self.clients_by_username.values()]
             await asyncio.gather(*tasks)
 
     def check_and_close_server(self):
@@ -71,11 +71,11 @@ class WebSocketServer:
                     await self.send_to_all_messages()
                 elif message_json["type"] == "connect":
                     timestamp = time.time()
-                    self.clients_by_username[message_json["username"]] = (websocket, timestamp)
-                    await self.send_to_all_new_user(message_json["username"])
+                    self.clients_by_username[message_json["uuid"]] = (websocket, timestamp)
+                    await self.send_to_all_new_user(message_json["username"], message_json["uuid"])
                 elif message_json["type"] == "disconnect":
-                    self.clients_by_username.pop(message_json["username"], None)
-                    await self.send_to_all_user_disconnect(message_json["username"])
+                    self.clients_by_username.pop(message_json["uuid"], None)
+                    await self.send_to_all_user_disconnect(message_json["username"], message_json["uuid"])
 
                 # Check and close the server if needed
                 self.check_and_close_server()
