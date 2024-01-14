@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import WebSocketService from './WebSocketService'; // Import WebSocketService
+import WebSocketService from '../WebSocketService'; // Import WebSocketService
 import './Chat.css';
-import animals from './images/Animals';
+import animals from '../images/Animals';
 
 const Chat = () => {
   const location = useLocation();
@@ -20,10 +20,8 @@ const Chat = () => {
     WebSocketService.connect(username, port, uuid, setMessages, setNotification);
 
     return () => {
-      // Close WebSocket connection when component unmounts
-      WebSocketService.close();
     };
-  }, [username, port]);
+  }, [username, port, uuid]);
 
   const handle_send_message = () => {
     // Send message to the server

@@ -5,13 +5,21 @@ import './Connect.css';
 const Connect = () => {
   const [username, setUsername] = useState('');
   const [port, setPort] = useState('');
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
+  const isValidPort = (port) => {
+    return !isNaN(port) && port >= 1024 && port <= 65535 && port !== 8000 && port !== 3000;
+  };
+  
   const handle_connect = async () => {
     try {
-      if (isNaN(port)) {
-        alert('Port must be a valid number');
+      setLoading(true);
+  
+      if (!isValidPort(port)) {
+        alert('Invalid port number. Port must be between 1024 and 65535, excluding 8000 and 3000.');
         setPort('');
+        setLoading(false);
         return;
       }
   
@@ -25,8 +33,11 @@ const Connect = () => {
       navigate('/chat', { state: { username, port, uuid } });
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
+  
 
   const generate_uuid = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -52,11 +63,12 @@ const Connect = () => {
           <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" className="illustration" />
           <h1 className="opacity">Chat</h1>
           <h1 className="opacity">Log In</h1>
+          {loading ? <div className="loader" /> : ''}
           <form>
             <input type="text" placeholder="USERNAME" value={username} onChange={handle_username_change} />
             <input type="text" placeholder="PORT" value={port} onChange={handle_port_change} />
             <button className="opacity" type="button" onClick={handle_connect}>
-              Connect
+              {loading ? 'Connecting...' : 'Connect'}
             </button>
           </form>
           <div className="register-forget opacity">

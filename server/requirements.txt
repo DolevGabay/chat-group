@@ -1,0 +1,5 @@
+Flask
+websocket-server
+flask-cors
+websockets
+requests

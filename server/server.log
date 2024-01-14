@@ -1,0 +1,466 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:36] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc"}
+INFO:root:New user connected: dfvdfv
+INFO:root:Clients connected: {'d4289d94-f227-4193-b085-9d29e5be9cbc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f90f8e1c1f0>, 1705262856.1898282)}
+INFO:root:Received message from the client: {"type":"message","userName":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc"}
+INFO:root:User disconnected: dfvdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:49] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:49] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:39] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b"}
+INFO:root:New user connected: dfvfddv
+INFO:root:Clients connected: {'770d7ff8-b2a8-4a5d-892a-e4555835f71b': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f90f8e1cb80>, 1705262979.7598069)}
+INFO:root:Received message from the client: {"type":"message","userName":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b","text":"sdvdvf"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b"}
+INFO:root:User disconnected: dfvfddv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:44] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:44] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+ERROR:server:Exception on /start_websocket_server/3001 [GET]
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 46, in start_websocket_server_endpoint
+    start_websocket_server(port)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 32, in start_websocket_server
+    asyncio.run(start_websocket_server_async(port))
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 26, in start_websocket_server_async
+    await asyncio.to_thread(websocket_server.start)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 101, in start
+    asyncio.run(self.run_server())
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 94, in run_server
+    self.SERVER = await websockets.serve(self.handle_client, "localhost", self.PORT)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1116, in __await_impl__
+    server = await self._create_server()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 1513, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 48] error while attempting to bind on address ('127.0.0.1', 3001): address already in use
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:12:12] "[35m[1mGET /start_websocket_server/3001 HTTP/1.1[0m" 500 -
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+ERROR:server:Exception on /start_websocket_server/3001 [GET]
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 46, in start_websocket_server_endpoint
+    logging.info(f"Starting WebSocket server on port {port}")
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 32, in start_websocket_server
+    def on_exit():
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 26, in start_websocket_server_async
+    websocket_thread = threading.Thread(target=websocket_server.start)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 101, in start
+    asyncio.run(self.run_server())
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 94, in run_server
+    self.SERVER = await websockets.serve(self.handle_client, "localhost", self.PORT)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1116, in __await_impl__
+    server = await self._create_server()
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 1513, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 48] error while attempting to bind on address ('127.0.0.1', 3001): address already in use
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:23] "[35m[1mGET /start_websocket_server/3001 HTTP/1.1[0m" 500 -
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:32] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd"}
+INFO:root:New user connected: sdcsdc
+INFO:root:Clients connected: {'0ef1a186-452d-4660-9792-06fd8aba24cd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff1f0c6c1f0>, 1705263212.3731542)}
+INFO:root:Received message from the client: {"type":"message","userName":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd","text":"dfvdv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd"}
+INFO:root:User disconnected: sdcsdc
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:35] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:35] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:14] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"243d4781-c96e-4791-a00b-389e92972b7f"}
+INFO:root:New user connected: dfvdfv
+INFO:root:Clients connected: {'243d4781-c96e-4791-a00b-389e92972b7f': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff2610441f0>, 1705263314.761824)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"243d4781-c96e-4791-a00b-389e92972b7f"}
+INFO:root:User disconnected: dfvdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:19] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:19] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:28] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'663f0362-7284-44e8-a983-437240987290': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fe260b1c1f0>, 1705263508.505195)}
+INFO:root:Received message from the client: {"type":"message","userName":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290"}
+INFO:root:User disconnected: dolev
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:30] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:30] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:31:22] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:31:53] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:18] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfv","uuid":"95a3d059-807a-4357-bf16-81a71625156a"}
+INFO:root:New user connected: dfv
+INFO:root:Clients connected: {'95a3d059-807a-4357-bf16-81a71625156a': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc879114b20>, 1705264458.8922188)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfv","uuid":"95a3d059-807a-4357-bf16-81a71625156a"}
+INFO:root:User disconnected: dfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:41] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:41] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:websockets.server:server listening on [::1]:3002
+INFO:websockets.server:server listening on 127.0.0.1:3002
+INFO:root:WebSocket server listening on ws://localhost:3002
+INFO:root:Starting WebSocket server on port 3002
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:47] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"fvdffdv","uuid":"86dbe5b0-aa05-4621-bf31-21c740373488"}
+INFO:root:New user connected: fvdffdv
+INFO:root:Clients connected: {'86dbe5b0-aa05-4621-bf31-21c740373488': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc8791162f0>, 1705264487.0713658)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"fvdffdv","uuid":"86dbe5b0-aa05-4621-bf31-21c740373488"}
+INFO:root:User disconnected: fvdffdv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3002 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:50] "POST /remove_port/3002 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3002 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:50] "POST /remove_port/3002 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3002 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:00] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dolev","uuid":"1075ca49-968c-48da-8ea1-3dec586cb034"}
+INFO:root:New user connected: dolev
+INFO:root:Clients connected: {'1075ca49-968c-48da-8ea1-3dec586cb034': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb4e9118b20>, 1705264500.028588)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dolev","uuid":"1075ca49-968c-48da-8ea1-3dec586cb034"}
+INFO:root:User disconnected: dolev
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:01] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:01] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:websockets.server:server listening on [::1]:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:19] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"7332f50e-c7ee-4262-b212-26fa9b230fbf"}
+INFO:root:New user connected: dfdfv
+INFO:root:Clients connected: {'7332f50e-c7ee-4262-b212-26fa9b230fbf': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0cb20>, 1705264939.5667572)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"7332f50e-c7ee-4262-b212-26fa9b230fbf"}
+INFO:root:User disconnected: dfdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:21] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:21] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:websockets.server:server listening on 127.0.0.1:8080
+INFO:websockets.server:server listening on [::1]:8080
+INFO:root:WebSocket server listening on ws://localhost:8080
+INFO:root:Starting WebSocket server on port 8080
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:26] "GET /start_websocket_server/8080 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"e6efc894-5598-415e-981d-c3f257c7ed41"}
+INFO:root:New user connected: dfvdfv
+INFO:root:Clients connected: {'e6efc894-5598-415e-981d-c3f257c7ed41': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0e2f0>, 1705264946.9089322)}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"e6efc894-5598-415e-981d-c3f257c7ed41"}
+INFO:root:User disconnected: dfvdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 8080 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:28] "POST /remove_port/8080 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 8080 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:28] "POST /remove_port/8080 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 8080 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:websockets.server:server listening on [::1]:2332
+INFO:websockets.server:server listening on 127.0.0.1:2332
+INFO:root:WebSocket server listening on ws://localhost:2332
+INFO:root:Starting WebSocket server on port 2332
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:37] "GET /start_websocket_server/2332 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e"}
+INFO:root:New user connected: dfdfv
+INFO:root:Clients connected: {'d9294651-6148-4f90-9d20-9fbc7913fc7e': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0e650>, 1705264957.0591118)}
+INFO:root:Received message from the client: {"type":"message","userName":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e"}
+INFO:root:User disconnected: dfdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 2332 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:41] "POST /remove_port/2332 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 2332 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:41] "POST /remove_port/2332 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 2332 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Starting WebSocket server on port 8000
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:43:46] "GET /start_websocket_server/8000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:43:46] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3000
+INFO:websockets.server:server listening on 127.0.0.1:3000
+INFO:root:WebSocket server listening on ws://localhost:3000
+INFO:root:Starting WebSocket server on port 3000
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:51] "GET /start_websocket_server/3000 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549"}
+INFO:root:New user connected: dfdfv
+INFO:root:Clients connected: {'1fca979b-4b52-47ee-9ec9-075360929549': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fd7f9124b20>, 1705265271.2087839)}
+INFO:root:Received message from the client: {"type":"message","userName":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549"}
+INFO:root:User disconnected: dfdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3000 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:57] "POST /remove_port/3000 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3000 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:57] "POST /remove_port/3000 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3000 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:websockets.server:server listening on [::1]:3001
+INFO:websockets.server:server listening on 127.0.0.1:3001
+INFO:root:WebSocket server listening on ws://localhost:3001
+INFO:root:Starting WebSocket server on port 3001
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:34] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
+INFO:websockets.server:connection open
+INFO:root:Received message from the client: {"type":"connect","username":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8"}
+INFO:root:New user connected: dfvdfvdfv
+INFO:root:Clients connected: {'c0ca265e-1ef6-49bb-a498-fc87586684e8': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb20824cb20>, 1705265314.343507)}
+INFO:root:Received message from the client: {"type":"message","userName":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8","text":"dfvdfv"}
+INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8"}
+INFO:root:User disconnected: dfvdfvdfv
+INFO:root:Clients connected: {}
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:37] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:server closing
+INFO:root:Client disconnected.
+INFO:root:No clients connected. Closing the WebSocket server.
+INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:37] "POST /remove_port/3001 HTTP/1.1" 200 -
+INFO:root:HTTP request to remove port 3001 successful.
+INFO:websockets.server:connection closed
+INFO:websockets.server:server closed
+INFO:root:Stopping all threads...
+INFO:root:All threads stopped. exiting...

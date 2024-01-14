@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Connect from './Connect';
-import Chat from './Chat';
+import Connect from './pages/Connect';
+import Chat from './pages/Chat';
 
 function App() {
   return (
