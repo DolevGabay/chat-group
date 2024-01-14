@@ -1,5 +1,5 @@
-# multi-threaded chat server over TCP
-# made by Dolev Gabay
+# Multi-threaded chat server over TCP
+# Made by Dolev Gabay
 
 This project consists of a Python backend and a React frontend.
 
