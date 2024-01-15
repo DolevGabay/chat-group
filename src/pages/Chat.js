@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import WebSocketService from '../WebSocketService'; // Import WebSocketService
 import './Chat.css';
 import animals from '../images/Animals';
+import io from 'socket.io-client';
 
 const Chat = () => {
   const location = useLocation();
@@ -13,36 +13,77 @@ const Chat = () => {
   const [newMessage, setNewMessage] = useState('');
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [notification, setNotification] = useState(null);
+  const [socketConnection, setSocketConnection] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Connect to WebSocket when component mounts
-    WebSocketService.connect(username, port, uuid, setMessages, setNotification);
+    // Connect to the chat server
+    console.log(`C ${port}`);
+    const socket = io(`http://localhost:${port}`);
+    setSocketConnection(socket);
 
     return () => {
+      socket.disconnect();
     };
-  }, [username, port, uuid]);
+  }, []);
 
-  const handle_send_message = () => {
-    // Send message to the server
-    if (WebSocketService.socket && WebSocketService.socket.readyState === WebSocket.OPEN) {
-      const messageObject = {
-        type: 'message',
-        userName: username,
-        uuid: uuid,
-        text: newMessage,
-      };
+  const handleDisconnect = () => {
+    console.log('Disconnected from Main server');
+  };
 
-      WebSocketService.sendMessage(messageObject);
-      setNewMessage('');
-    } else {
-      console.error('WebSocket connection is not open.');
+  const handleMessages = (messages) => {
+    console.log(messages)
+    setMessages(messages)
+  };
+
+  const handleConnect = () => {
+    console.log('Connected to Chat server');
+        const message = `${username}has joined the chat.`
+        socketConnection.emit('notify_all', message);
+  };
+
+  const handleNotify = (notification) => {
+    setNotification(notification);
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    if (socketConnection) {
+      socketConnection.on('disconnect', handleDisconnect);
+      socketConnection.on('messages', handleMessages);
+      socketConnection.on('connect', handleConnect);
+      socketConnection.on('notify', handleNotify);
     }
+
+    return () => {
+      // Clean up event listeners when the component is unmounted
+      if (socketConnection) {
+        socketConnection.off('disconnect', handleDisconnect);
+      }
+    };
+  }, [socketConnection]);
+
+  const handle_submit = () => {
+    console.log(newMessage)
+    if (newMessage.trim() === '') {
+      setNotification('Message cannot be empty.');
+      return;
+    }
+
+    // Emit the new message to the server
+    socketConnection.emit('message', { userName: username, text: newMessage, uuid });
+
+    // Clear the input field
+    setNewMessage('');
   };
 
   const handle_exit_chat = () => {
     // Disconnect from the server and navigate back to home
-    WebSocketService.disconnect(username, uuid);
+    const message = `${username} has left the chat.`;
+    socketConnection.emit('notify_all', message);
+    socketConnection.disconnect();
     navigate('/');
   };
 
@@ -100,9 +141,9 @@ const Chat = () => {
             value={newMessage}
             onChange={handle_input_change}
           ></textarea>
-          <button type="submit" className="message-submit" onClick={handle_send_message}>
-            Send
-          </button>
+          <button type="submit" className="message-submit" onClick={handle_submit}>
+          Send
+        </button>
 
         </div>
       </div>

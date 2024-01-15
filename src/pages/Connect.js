@@ -1,59 +1,84 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './Connect.css';
+import io from 'socket.io-client';
+import { useNavigate } from 'react-router-dom';
 
 const Connect = () => {
   const [username, setUsername] = useState('');
   const [port, setPort] = useState('');
-  const [loading, setLoading] = useState(false); 
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [mainSocketConnection, setMainSocketConnection] = useState(null);
+
+  const navigate = useNavigate();  // Correct hook for navigation
 
   const isValidPort = (port) => {
     return !isNaN(port) && port >= 1024 && port <= 65535 && port !== 8000 && port !== 3000;
   };
-  
-  const handle_connect = async () => {
-    try {
-      setLoading(true);
-  
-      if (!isValidPort(port)) {
-        alert('Invalid port number. Port must be between 1024 and 65535, excluding 8000 and 3000.');
-        setPort('');
-        setLoading(false);
-        return;
-      }
-  
-      // Send HTTP request to start the WebSocket server
-      const serverResponse = await fetch(`http://localhost:8000/start_websocket_server/${port}`, {
-        method: 'GET',
-      });
-      const serverData = await serverResponse.json();
-      console.log(serverData.message);
-      const uuid = generate_uuid();
-      navigate('/chat', { state: { username, port, uuid } });
-    } catch (error) {
-      console.error('Error:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  
 
-  const generate_uuid = () => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      const r = Math.random() * 16 | 0,
-            v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-  };  
-  
-  const handle_username_change = (event) => {
+  const handleConnect = () => {
+
+    if (!isValidPort(port)) {
+      alert('Invalid port number. Port must be between 1024 and 65535, excluding 8000 and 3000.');
+      setPort('');
+      setLoading(false);
+      return;
+    }
+
+    connectToChatServer();
+  };
+
+  const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
-  const handle_port_change = (event) => {
+  const handlePortChange = (event) => {
     setPort(event.target.value);
   };
+
+  const connectToChatServer = () => {
+    const clientData = { username, port };
+    mainSocketConnection.emit('open_chat', { clientData });
+  };
+
+  // Listen for events emitted by the server
+  useEffect(() => {
+    const socketInstance = io('http://localhost:8000');
+    setMainSocketConnection(socketInstance);
+
+    return () => {
+      // Clean up event listeners when the component is unmounted
+      socketInstance.disconnect();
+    };
+  }, []);
+
+  // Event listeners outside useEffect
+  const handleChatOpened = (message) => {
+    console.log(message);
+    navigate('/chat', { state: { username:message.username, port:message.port, uuid: message.uuid } });
+  };
+
+  const handleDisconnect = () => {
+    console.log('Disconnected from Main server');
+  };
+
+  useEffect(() => {
+    if (mainSocketConnection) {
+      mainSocketConnection.on('chat_opened', handleChatOpened);
+      mainSocketConnection.on('disconnect', handleDisconnect);
+      mainSocketConnection.on('connect', () => {
+        console.log('Connected to Main server');
+        setLoading(false);
+      });
+    }
+
+    return () => {
+      // Clean up event listeners when the component is unmounted
+      if (mainSocketConnection) {
+        mainSocketConnection.off('chat_opened', handleChatOpened);
+        mainSocketConnection.off('disconnect', handleDisconnect);
+      }
+    };
+  }, [mainSocketConnection, navigate]);
 
   return (
     <section className="container">
@@ -65,9 +90,9 @@ const Connect = () => {
           <h1 className="opacity">Log In</h1>
           {loading ? <div className="loader" /> : ''}
           <form>
-            <input type="text" placeholder="USERNAME" value={username} onChange={handle_username_change} />
-            <input type="text" placeholder="PORT" value={port} onChange={handle_port_change} />
-            <button className="opacity" type="button" onClick={handle_connect}>
+            <input type="text" placeholder="USERNAME" value={username} onChange={handleUsernameChange} />
+            <input type="text" placeholder="PORT" value={port} onChange={handlePortChange} />
+            <button className="opacity" type="button" onClick={handleConnect}>
               {loading ? 'Connecting...' : 'Connect'}
             </button>
           </form>

@@ -1,68 +1,115 @@
-import argparse
+import socketio
+import eventlet
 import threading
-import logging
-from flask import Flask, jsonify, request  
-from websocket_server import WebSocketServer
-from flask_cors import CORS  
-import atexit
-import asyncio
-import time
-from logging_config import configure_logging  
+import uuid
+from datetime import datetime
 
-app = Flask(__name__)
-CORS(app)  
+# Create a new Socket.IO server for the main chat
+sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
 
-# Logging configuration
-configure_logging()
+# Wrap the Socket.IO server as a WSGI application
+app = socketio.WSGIApp(sio)
 
-# Data structures to keep track of the WebSocket servers
-PORTS_IN_USE = []
-THREADS = []
-WEBSOCKET_SERVERS = []
+PORT_IN_USE = []
 
-def start_websocket_server(port):
-    # Start the WebSocket server
-    websocket_server = WebSocketServer(port)
-    websocket_thread = threading.Thread(target=websocket_server.start)
-    websocket_thread.start()
-    THREADS.append(websocket_thread)
-    PORTS_IN_USE.append(port)
-    WEBSOCKET_SERVERS.append(websocket_server)
+# Define a handler for the 'connect' event on the main chat
+@sio.event
+def connect(sid, environ):
+    print(f"Client {sid} connected to the main chat")
 
-def on_exit():
-    # End all threads
-    logging.info("Stopping all threads...")
-    for thread in THREADS:
-        thread.join(timeout=2)  
-    logging.info("All threads stopped. exiting...")    
+# Define a handler for the 'message' event on the main chat
+@sio.event
+def open_chat(sid, data):
+    print(f"Message from {sid}: {data}")
+    print(data.get('clientData'))
+    port = data.get('clientData').get('port')
+    username = data.get('clientData').get('username')
 
-@app.route('/start_websocket_server/<int:port>', methods=['GET'])
-def start_websocket_server_endpoint(port):
-    # Check if the port is already in use if not start the WebSocket server
-    if port in PORTS_IN_USE:
-        return jsonify({"message": f"WebSocket server on port {port} is already running"})
-    start_websocket_server(port)
-    time.sleep(1)
-    logging.info(f"Starting WebSocket server on port {port}")
-    return jsonify({"message": f"WebSocket server started on port {port}"})  
 
-@app.route('/remove_port/<int:port>', methods=['POST'])
-def remove_port_endpoint(port):
-    # Remove the port from PORTS_IN_USE
-    if port not in PORTS_IN_USE:
-        return jsonify({"message": f"WebSocket server on port {port} is not in use"})
+    if port in PORT_IN_USE:
+        sio.emit('chat_opened', {"message": f"Port {port} is already in use","username":username, "port":port}, room=sid)
+        return
 
-    PORTS_IN_USE.remove(port)
-    logging.info(f"WebSocket server on port {port} removed from PORTS_IN_USE")
-    return jsonify({"message": f"WebSocket server on port {port} removed"})
+    # Start a group chat on the specified port
+    threading.Thread(target=start_group_chat, args=(port,), daemon=True).start()
+    uuid = generate_uuid()
+
+    sio.emit('chat_opened', {"message": f"Group chat opened on port {port}","username":username, "port":port, "uuid": uuid}, room=sid)
+
+# Define a handler for the 'disconnect' event on the main chat
+@sio.event
+def disconnect(sid):
+    print(f"Client {sid} disconnected from the main chat")
+
+def start_group_chat(port):
+    # Create a new Socket.IO server for the group chat with a custom namespace
+    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
+
+    # Wrap the Socket.IO server as a WSGI application
+    group_app = socketio.WSGIApp(group_sio)  # Use a custom namespace
+
+    PORT_IN_USE.append(port)
+
+    MESSAGES = []
+    CLIENTS = []
+
+    # Define a handler for the 'connect' event on the group chat
+    @group_sio.event
+    def connect(sid, environ):
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"Client {sid} connected to the group chat on port {port} at {timestamp}")
+        CLIENTS.append({'sid': sid, 'timestamp': timestamp})
+
+    # Define a handler for the 'message' event on the group chat
+    @group_sio.event
+    def message(sid, data):
+        print(f"Message from {sid}: {data}")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data['timestamp'] = timestamp
+        data['sid'] = sid
+        MESSAGES.append(data)
+        print(MESSAGES)
+
+        for client in CLIENTS:
+            client_timestamp = client['timestamp']
+            client_sid = client['sid']
+            filtered_messages = [msg for msg in MESSAGES if msg['timestamp'] > client_timestamp]
+            group_sio.emit('messages', filtered_messages, room=client_sid)
+
+    @group_sio.event
+    def notify_all(sid, message):
+        print(f"Notify from {sid}: {message}")
+
+        for client in CLIENTS:
+            if client['sid'] == sid:
+                continue
+            group_sio.emit('notify', message)        
+
+    # Define a handler for the 'disconnect' event on the group chat
+    @group_sio.event
+    def disconnect(sid):
+        print(f"Client {sid} disconnected from the group chat on port {port}")
+        
+        # Find the dictionary with matching 'sid'
+        client_to_remove = next((client for client in CLIENTS if client['sid'] == sid), None)
+        
+        # Remove the dictionary from the list
+        if client_to_remove:
+            CLIENTS.remove(client_to_remove)
+
+        if len(CLIENTS) == 0:
+            PORT_IN_USE.remove(port)
+            group_sio.stop() 
+            print(f"Group chat on port {port} stopped")
+
+
+    # Use eventlet to run the Socket.IO server for the group chat on the specified port
+    eventlet.wsgi.server(eventlet.listen(('localhost', int(port))), group_app)
+
+
+def generate_uuid():
+    return uuid.uuid4().hex
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Run a Flask application with WebSocket server threads.')
-    parser.add_argument('flask_port', type=int, help='Port number for the Flask application')
-    args = parser.parse_args()
-
-    # End the threads when the program exits
-    atexit.register(on_exit)
-
-    # Run Flask app
-    app.run(port=args.flask_port, threaded=True)
+    # Use eventlet to run the main Socket.IO server on port 8000
+    eventlet.wsgi.server(eventlet.listen(('localhost', 8000)), app)
