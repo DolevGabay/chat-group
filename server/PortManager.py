@@ -11,6 +11,3 @@ class PortManager:
 
     def get_port_in_use(self):
         return self.PORT_IN_USE
-
-    def clear_ports(self):
-        self.PORT_IN_USE.clear()
