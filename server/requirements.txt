@@ -1,2 +1,2 @@
-python-socketio==5.9.1
-eventlet==0.32.0
+python-socketio
+eventlet
