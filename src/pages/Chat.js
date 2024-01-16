@@ -38,7 +38,8 @@ const Chat = () => {
 
   const handleConnect = () => {
     console.log('Connected to Chat server');
-        const message = `${username}has joined the chat.`
+        const message = `${username} has joined the chat.`
+        socketConnection.emit('join', uuid);
         socketConnection.emit('notify_all', message);
   };
 

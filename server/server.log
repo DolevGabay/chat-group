@@ -464,3 +464,370 @@ INFO:websockets.server:connection closed
 INFO:websockets.server:server closed
 INFO:root:Stopping all threads...
 INFO:root:All threads stopped. exiting...
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
+    logger.info(f"Client {sid} connected to the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
+    logger.info(f"Client {sid} connected to the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
+    logger.info(f"Client {sid} disconnected from the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
+    logger.info(f"Client {sid} connected to the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
+    logger.info(f"Client {sid} disconnected from the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
+    logger.info(f"Client {sid} connected to the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
+    logger.info(f"Client {sid} connected to the main chat")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
+    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
+    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
+    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
+AttributeError: 'NoneType' object has no attribute 'info'
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
+    def disconnect(sid):
+NameError: name 'logging' is not defined
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
+    def disconnect(sid):
+NameError: name 'logging' is not defined
+ERROR:engineio.server:disconnect handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
+    self._handle_disconnect(eio_sid, n)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
+    self._trigger_event('disconnect', namespace, sid)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
+    def disconnect(sid):
+NameError: name 'logging' is not defined
+INFO:root:Client 3ttQA7oRqNAJJQj-AAAB connected to the main chat
+INFO:root:Client ezaGfI9FOao0kte5AAAD connected to the main chat
+INFO:root:Client wva_PkMxcNW5pOtkAAAF connected to the main chat
+INFO:root:Client 3ttQA7oRqNAJJQj-AAAB disconnected from the main chat
+INFO:root:Client ezaGfI9FOao0kte5AAAD disconnected from the main chat
+INFO:root:Client wva_PkMxcNW5pOtkAAAF disconnected from the main chat
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+ERROR:engineio.server:message handler error
+Traceback (most recent call last):
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
+    return self.handlers[event](*args)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
+    success = self._trigger_event(
+  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
+    return handler(*args)
+  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
+    logging.info(f"Client {sid} connected to the main chat")
+NameError: name 'logging' is not defined
+INFO:root:Client 1qSeXu74dmOT1vmSAAAB connected to the main chat
+INFO:root:Client 0HBXZpmMnXmnk6ZZAAAD connected to the main chat
+INFO:root:Client 2rrayH49UPl-eC8PAAAF connected to the main chat
+INFO:root:Client qEl-KUrdOlLuHSF-AAAB connected to the main chat
+INFO:root:Client D-OrCW06OBN0U4gHAAAD connected to the main chat
+INFO:root:Client rIwNy0eTwfvtTlxpAAAF connected to the main chat
+INFO:root:Client oiTCxylE64X4cdTAAAAI connected to the main chat
+INFO:root:Client -O84JyfCy6vRsZ2vAAAB connected to the main chat
+INFO:root:Client 7Lli0Dk6QtgowK5MAAAD connected to the main chat
+INFO:root:Client YkGjwOdMBhApDEFUAAAF connected to the main chat
+INFO:root:Client YkGjwOdMBhApDEFUAAAF disconnected from the main chat
+INFO:root:Client 7Lli0Dk6QtgowK5MAAAD disconnected from the main chat
+INFO:root:Client 5-l5QscheKDAjGGrAAAI connected to the main chat
+INFO:root:Client 5-l5QscheKDAjGGrAAAI disconnected from the main chat
+INFO:root:Client -O84JyfCy6vRsZ2vAAAB disconnected from the main chat
+INFO:root:Client qJUCe9dnI3FjgPDUAAAB connected to the main chat
+INFO:root:Client qJUCe9dnI3FjgPDUAAAB disconnected from the main chat
+INFO:root:Client w3gs13xw1SDK_mL3AAAC connected to the main chat
+INFO:root:Message from w3gs13xw1SDK_mL3AAAC: {'clientData': {'username': 'dvfdfv', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client w3gs13xw1SDK_mL3AAAC disconnected from the main chat
+INFO:root:Client cVdf5hP3dWDWrN2vAAAC connected to the group chat on port 3001
+INFO:root:Client cVdf5hP3dWDWrN2vAAAC joined the group chat on port 3001 at 2024-01-16 12:17:47 with uuid 8b28e797a7464018a73039cdd76d2179
+INFO:root:[{'sid': 'cVdf5hP3dWDWrN2vAAAC', 'timestamp': '2024-01-16 12:17:47', 'uuid': '8b28e797a7464018a73039cdd76d2179'}]
+INFO:root:Notify from cVdf5hP3dWDWrN2vAAAC: dvfdfv has joined the chat.
+INFO:root:Message from cVdf5hP3dWDWrN2vAAAC: {'userName': 'dvfdfv', 'text': 'dvdvf', 'uuid': '8b28e797a7464018a73039cdd76d2179'}
+INFO:root:[{'userName': 'dvfdfv', 'text': 'dvdvf', 'uuid': '8b28e797a7464018a73039cdd76d2179', 'timestamp': '2024-01-16 12:17:48', 'sid': 'cVdf5hP3dWDWrN2vAAAC'}]
+INFO:root:Client Vc6bK3BxMV78ZYJOAAAC connected to the main chat
+INFO:root:Client Vc6bK3BxMV78ZYJOAAAC disconnected from the main chat
+INFO:root:Client HDNvrXPLlQFERePFAAAF connected to the main chat
+INFO:root:Client HDNvrXPLlQFERePFAAAF disconnected from the main chat
+INFO:root:Client 1F5tuMu4WUV2Zrr_AAAI connected to the main chat
+INFO:root:Message from 1F5tuMu4WUV2Zrr_AAAI: {'clientData': {'username': 'dfvdfv', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client 1F5tuMu4WUV2Zrr_AAAI disconnected from the main chat
+INFO:root:Client lWb1CQ8UxcTMv89BAAAC connected to the main chat
+INFO:root:Message from lWb1CQ8UxcTMv89BAAAC: {'clientData': {'username': 'dfvdfv', 'port': '3001'}}
+INFO:root:Client lWb1CQ8UxcTMv89BAAAC disconnected from the main chat
+INFO:root:Client Etxa9VZSHgOnuL7_AAAB connected to the main chat
+INFO:root:Client Etxa9VZSHgOnuL7_AAAB disconnected from the main chat
+INFO:root:Client M9sRwzaGmMokQp_YAAAC connected to the main chat
+INFO:root:Message from M9sRwzaGmMokQp_YAAAC: {'clientData': {'username': 'dolev', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client M9sRwzaGmMokQp_YAAAC disconnected from the main chat
+INFO:root:Client xRRjAhxbnfC8TAAeAAAC connected to the group chat on port 3001
+INFO:root:Client xRRjAhxbnfC8TAAeAAAC joined the group chat on port 3001 at 2024-01-16 12:34:28 with uuid 4d44447576d04e689988d8324de225a3
+INFO:root:[{'sid': 'xRRjAhxbnfC8TAAeAAAC', 'timestamp': '2024-01-16 12:34:28', 'uuid': '4d44447576d04e689988d8324de225a3'}]
+INFO:root:Notify from xRRjAhxbnfC8TAAeAAAC: dolev has joined the chat.
+INFO:root:Notify from xRRjAhxbnfC8TAAeAAAC: dolev has left the chat.
+INFO:root:Client xRRjAhxbnfC8TAAeAAAC disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Client XvAR1Kb1VrdCD-3UAAAF connected to the main chat
+INFO:root:Message from XvAR1Kb1VrdCD-3UAAAF: {'clientData': {'username': 'dfvdfv', 'port': '3002'}}
+INFO:root:['3001']
+INFO:root:Client XvAR1Kb1VrdCD-3UAAAF disconnected from the main chat
+INFO:root:Client f6ss17ppqpan5XOTAAAC connected to the group chat on port 3002
+INFO:root:Client f6ss17ppqpan5XOTAAAC joined the group chat on port 3002 at 2024-01-16 12:34:54 with uuid ed75d47227ae4c869c25ee265d91cf71
+INFO:root:[{'sid': 'f6ss17ppqpan5XOTAAAC', 'timestamp': '2024-01-16 12:34:54', 'uuid': 'ed75d47227ae4c869c25ee265d91cf71'}]
+INFO:root:Notify from f6ss17ppqpan5XOTAAAC: dfvdfv has joined the chat.
+INFO:root:Client f6ss17ppqpan5XOTAAAC disconnected from the group chat on port 3002
+INFO:root:[]
+INFO:root:Notify from f6ss17ppqpan5XOTAAAC: dfvdfv has left the chat.
+INFO:root:Client 0klvvyLuhgsWCYOaAAAI connected to the main chat
+INFO:root:Message from 0klvvyLuhgsWCYOaAAAI: {'clientData': {'username': 'vdfv', 'port': '3001'}}
+INFO:root:['3001', '3002']
+INFO:root:Client 0klvvyLuhgsWCYOaAAAI disconnected from the main chat
+INFO:root:Client gauAQcnWIjLKw-3GAAAF connected to the group chat on port 3001
+INFO:root:Client gauAQcnWIjLKw-3GAAAF joined the group chat on port 3001 at 2024-01-16 12:35:02 with uuid 7a6320eecede4e48bfa9821a400999d6
+INFO:root:[{'sid': 'gauAQcnWIjLKw-3GAAAF', 'timestamp': '2024-01-16 12:35:02', 'uuid': '7a6320eecede4e48bfa9821a400999d6'}]
+INFO:root:Notify from gauAQcnWIjLKw-3GAAAF: vdfv has joined the chat.
+INFO:root:Client gauAQcnWIjLKw-3GAAAF disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Notify from gauAQcnWIjLKw-3GAAAF: vdfv has left the chat.
+INFO:root:Client S3WmSah795z2SGR6AAAL connected to the main chat
+INFO:root:Message from S3WmSah795z2SGR6AAAL: {'clientData': {'username': 'dfvdfv', 'port': '3002'}}
+INFO:root:['3001', '3002']
+INFO:root:Client S3WmSah795z2SGR6AAAL disconnected from the main chat
+INFO:root:Client yixfd-FIxYiESE6kAAAF connected to the group chat on port 3002
+INFO:root:Client yixfd-FIxYiESE6kAAAF joined the group chat on port 3002 at 2024-01-16 12:35:10 with uuid daf7a09a8fc541f5ae9add2df987a3b0
+INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}]
+INFO:root:Notify from yixfd-FIxYiESE6kAAAF: dfvdfv has joined the chat.
+INFO:root:Message from yixfd-FIxYiESE6kAAAF: {'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}
+INFO:root:[{'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0', 'timestamp': '2024-01-16 12:35:13', 'sid': 'yixfd-FIxYiESE6kAAAF'}]
+INFO:root:Client 26shJgFHg4sQZYIHAAAO connected to the main chat
+INFO:root:Message from 26shJgFHg4sQZYIHAAAO: {'clientData': {'username': 'ddddd', 'port': '3001'}}
+INFO:root:['3001', '3002']
+INFO:root:Client 26shJgFHg4sQZYIHAAAO disconnected from the main chat
+INFO:root:Client 9HbWh7vMZPDkYejQAAAI connected to the group chat on port 3001
+INFO:root:Client 9HbWh7vMZPDkYejQAAAI joined the group chat on port 3001 at 2024-01-16 12:35:27 with uuid e29d105cae8d412d81974cd76be22757
+INFO:root:[{'sid': '9HbWh7vMZPDkYejQAAAI', 'timestamp': '2024-01-16 12:35:27', 'uuid': 'e29d105cae8d412d81974cd76be22757'}]
+INFO:root:Notify from 9HbWh7vMZPDkYejQAAAI: ddddd has joined the chat.
+INFO:root:Message from 9HbWh7vMZPDkYejQAAAI: {'userName': 'ddddd', 'text': 'dvdfvdfsv', 'uuid': 'e29d105cae8d412d81974cd76be22757'}
+INFO:root:[{'userName': 'ddddd', 'text': 'dvdfvdfsv', 'uuid': 'e29d105cae8d412d81974cd76be22757', 'timestamp': '2024-01-16 12:35:29', 'sid': '9HbWh7vMZPDkYejQAAAI'}]
+INFO:root:Client 9HbWh7vMZPDkYejQAAAI disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Notify from 9HbWh7vMZPDkYejQAAAI: ddddd has left the chat.
+INFO:root:Client 4_a40yomkfKRQFR7AAAR connected to the main chat
+INFO:root:Message from 4_a40yomkfKRQFR7AAAR: {'clientData': {'username': 'dolev', 'port': '3002'}}
+INFO:root:['3001', '3002']
+INFO:root:Client 4_a40yomkfKRQFR7AAAR disconnected from the main chat
+INFO:root:Client jvZ8deqaDsMhRJUIAAAI connected to the group chat on port 3002
+INFO:root:Client jvZ8deqaDsMhRJUIAAAI joined the group chat on port 3002 at 2024-01-16 12:35:38 with uuid fddc0cf655a64f5daddf6c88698f192e
+INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}, {'sid': 'jvZ8deqaDsMhRJUIAAAI', 'timestamp': '2024-01-16 12:35:38', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e'}]
+INFO:root:Notify from jvZ8deqaDsMhRJUIAAAI: dolev has joined the chat.
+INFO:root:Message from jvZ8deqaDsMhRJUIAAAI: {'userName': 'dolev', 'text': 'vb vb ', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e'}
+INFO:root:[{'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0', 'timestamp': '2024-01-16 12:35:13', 'sid': 'yixfd-FIxYiESE6kAAAF'}, {'userName': 'dolev', 'text': 'vb vb ', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e', 'timestamp': '2024-01-16 12:35:40', 'sid': 'jvZ8deqaDsMhRJUIAAAI'}]
+INFO:root:Client jvZ8deqaDsMhRJUIAAAI disconnected from the group chat on port 3002
+INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}]
+INFO:root:Notify from jvZ8deqaDsMhRJUIAAAI: dolev has left the chat.
+INFO:root:Client lIZdKCBypdxqgVa1AAAU connected to the main chat
+INFO:root:Client yixfd-FIxYiESE6kAAAF disconnected from the group chat on port 3002
+INFO:root:[]
+INFO:root:Notify from yixfd-FIxYiESE6kAAAF: dfvdfv has left the chat.
+INFO:root:Client oPnO8NytxlDeDlY6AAAX connected to the main chat
