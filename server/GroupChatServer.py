@@ -9,6 +9,7 @@ def start_group_chat(port, port_manager):
     GROUP_SIO = socketio.Server(cors_allowed_origins="http://localhost:3000")
     GROUP_APP = socketio.WSGIApp(GROUP_SIO)
 
+    #data structure to store messages and clients
     port_manager.update_port_in_use(port)
     MESSAGES = []
     CLIENTS = []
