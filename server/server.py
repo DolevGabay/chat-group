@@ -21,18 +21,17 @@ def connect(sid, environ):
 @sio.event
 def open_chat(sid, data):
     print(f"Message from {sid}: {data}")
-    print(data.get('clientData'))
+    print(PORT_IN_USE)
     port = data.get('clientData').get('port')
     username = data.get('clientData').get('username')
-
+    uuid = generate_uuid()
 
     if port in PORT_IN_USE:
-        sio.emit('chat_opened', {"message": f"Port {port} is already in use","username":username, "port":port}, room=sid)
+        sio.emit('chat_opened', {"message": f"Port {port} is already in use","username":username, "port":port, "uuid": uuid}, room=sid)
         return
 
     # Start a group chat on the specified port
     threading.Thread(target=start_group_chat, args=(port,), daemon=True).start()
-    uuid = generate_uuid()
 
     sio.emit('chat_opened', {"message": f"Group chat opened on port {port}","username":username, "port":port, "uuid": uuid}, room=sid)
 
@@ -56,9 +55,14 @@ def start_group_chat(port):
     # Define a handler for the 'connect' event on the group chat
     @group_sio.event
     def connect(sid, environ):
+        print(f"Client {sid} connected to the group chat on port {port}")
+
+    @group_sio.event
+    def join(sid, uuid):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"Client {sid} connected to the group chat on port {port} at {timestamp}")
-        CLIENTS.append({'sid': sid, 'timestamp': timestamp})
+        CLIENTS.append({'sid': sid, 'timestamp': timestamp, 'uuid': uuid})
+        print(f"Client {sid} joined the group chat on port {port} at {timestamp} with uuid {uuid}")
+        print(CLIENTS)  
 
     # Define a handler for the 'message' event on the group chat
     @group_sio.event
@@ -83,7 +87,7 @@ def start_group_chat(port):
         for client in CLIENTS:
             if client['sid'] == sid:
                 continue
-            group_sio.emit('notify', message)        
+            group_sio.emit('notify', message, room=client['sid'])        
 
     # Define a handler for the 'disconnect' event on the group chat
     @group_sio.event
@@ -96,12 +100,7 @@ def start_group_chat(port):
         # Remove the dictionary from the list
         if client_to_remove:
             CLIENTS.remove(client_to_remove)
-
-        if len(CLIENTS) == 0:
-            PORT_IN_USE.remove(port)
-            group_sio.stop() 
-            print(f"Group chat on port {port} stopped")
-
+            print(CLIENTS)
 
     # Use eventlet to run the Socket.IO server for the group chat on the specified port
     eventlet.wsgi.server(eventlet.listen(('localhost', int(port))), group_app)
