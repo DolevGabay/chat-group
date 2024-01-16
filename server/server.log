@@ -146,3 +146,18 @@ INFO:root:[{'sid': '851HaMNbrR4xFnhwAAAC', 'timestamp': '2024-01-16 14:58:13', '
 INFO:root:Notify from c-B8rEKoipQMrRvOAAAF: John Doe has joined the chat.
 INFO:root:Message from c-B8rEKoipQMrRvOAAAF: {'userName': 'John Doe', 'text': 'hello!', 'uuid': 'b78c7bf4352241409d2775ea4afb5733'}
 INFO:root:[{'userName': 'Dolev Gabay', 'text': 'hey!', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda', 'timestamp': '2024-01-16 14:58:36', 'sid': '851HaMNbrR4xFnhwAAAC'}, {'userName': 'John Doe', 'text': 'hello!', 'uuid': 'b78c7bf4352241409d2775ea4afb5733', 'timestamp': '2024-01-16 14:59:14', 'sid': 'c-B8rEKoipQMrRvOAAAF'}]
+INFO:root:Client SBE37chhve5XCWEpAAAC connected to the main chat
+INFO:root:Message from SBE37chhve5XCWEpAAAC: {'clientData': {'username': 'ib', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client SBE37chhve5XCWEpAAAC disconnected from the main chat
+INFO:root:Client IFfdddGu375tWpr9AAAC connected to the group chat on port 3001
+INFO:root:Client IFfdddGu375tWpr9AAAC joined the group chat on port 3001 at 2024-01-16 15:11:51 with uuid d4b069219a574e029690ff63a4b9a90d
+INFO:root:[{'sid': 'IFfdddGu375tWpr9AAAC', 'timestamp': '2024-01-16 15:11:51', 'uuid': 'd4b069219a574e029690ff63a4b9a90d'}]
+INFO:root:Notify from IFfdddGu375tWpr9AAAC: ib has joined the chat.
+INFO:root:Message from IFfdddGu375tWpr9AAAC: {'userName': 'ib', 'text': 'vjhv', 'uuid': 'd4b069219a574e029690ff63a4b9a90d'}
+INFO:root:[{'userName': 'ib', 'text': 'vjhv', 'uuid': 'd4b069219a574e029690ff63a4b9a90d', 'timestamp': '2024-01-16 15:11:54', 'sid': 'IFfdddGu375tWpr9AAAC'}]
+INFO:root:Client IFfdddGu375tWpr9AAAC disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Notify from IFfdddGu375tWpr9AAAC: ib has left the chat.
+INFO:root:Client 6tWD25x3uswpd8DuAAAF connected to the main chat
+INFO:root:Client 6tWD25x3uswpd8DuAAAF disconnected from the main chat
