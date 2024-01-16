@@ -145,10 +145,11 @@ Chat Title
 /*--------------------
 Messages
 --------------------*/
-/* Add this style to ensure messages are visible and positioned correctly */
 .messages-content {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+
   }
   
   .left {
