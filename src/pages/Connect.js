@@ -16,14 +16,13 @@ const Connect = () => {
   };
 
   const handleConnect = () => {
-
     if (!isValidPort(port)) {
       alert('Invalid port number. Port must be between 1024 and 65535, excluding 8000 and 3000.');
       setPort('');
-      setLoading(false);
       return;
     }
 
+    setLoading(true);
     connectToChatServer();
   };
 
@@ -40,8 +39,8 @@ const Connect = () => {
     mainSocketConnection.emit('open_chat', { clientData });
   };
 
-  // Listen for events emitted by the server
   useEffect(() => {
+    // Connect to the main server
     const socketInstance = io('http://localhost:8000');
     setMainSocketConnection(socketInstance);
 
@@ -51,7 +50,6 @@ const Connect = () => {
     };
   }, []);
 
-  // Event listeners outside useEffect
   const handleChatOpened = (message) => {
     console.log(message);
     navigate('/chat', { state: { username:message.username, port:message.port, uuid: message.uuid } });
@@ -62,6 +60,7 @@ const Connect = () => {
   };
 
   useEffect(() => {
+    // Event listeners for main server
     if (mainSocketConnection) {
       mainSocketConnection.on('chat_opened', handleChatOpened);
       mainSocketConnection.on('disconnect', handleDisconnect);

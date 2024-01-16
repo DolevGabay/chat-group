@@ -1,833 +1,148 @@
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:36] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc"}
-INFO:root:New user connected: dfvdfv
-INFO:root:Clients connected: {'d4289d94-f227-4193-b085-9d29e5be9cbc': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f90f8e1c1f0>, 1705262856.1898282)}
-INFO:root:Received message from the client: {"type":"message","userName":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc","text":"dfvdfv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"d4289d94-f227-4193-b085-9d29e5be9cbc"}
-INFO:root:User disconnected: dfvdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:49] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:07:49] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:39] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b"}
-INFO:root:New user connected: dfvfddv
-INFO:root:Clients connected: {'770d7ff8-b2a8-4a5d-892a-e4555835f71b': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7f90f8e1cb80>, 1705262979.7598069)}
-INFO:root:Received message from the client: {"type":"message","userName":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b","text":"sdvdvf"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfvfddv","uuid":"770d7ff8-b2a8-4a5d-892a-e4555835f71b"}
-INFO:root:User disconnected: dfvfddv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:44] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:09:44] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:websockets.server:server listening on [::1]:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-ERROR:server:Exception on /start_websocket_server/3001 [GET]
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 46, in start_websocket_server_endpoint
-    start_websocket_server(port)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 32, in start_websocket_server
-    asyncio.run(start_websocket_server_async(port))
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
-    return future.result()
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 26, in start_websocket_server_async
-    await asyncio.to_thread(websocket_server.start)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/threads.py", line 25, in to_thread
-    return await loop.run_in_executor(None, func_call)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 101, in start
-    asyncio.run(self.run_server())
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
-    return future.result()
-  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 94, in run_server
-    self.SERVER = await websockets.serve(self.handle_client, "localhost", self.PORT)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1116, in __await_impl__
-    server = await self._create_server()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 1513, in create_server
-    raise OSError(err.errno, 'error while attempting '
-OSError: [Errno 48] error while attempting to bind on address ('127.0.0.1', 3001): address already in use
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:12:12] "[35m[1mGET /start_websocket_server/3001 HTTP/1.1[0m" 500 -
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:websockets.server:server listening on [::1]:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-ERROR:server:Exception on /start_websocket_server/3001 [GET]
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 46, in start_websocket_server_endpoint
-    logging.info(f"Starting WebSocket server on port {port}")
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 32, in start_websocket_server
-    def on_exit():
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
-    return future.result()
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server.py", line 26, in start_websocket_server_async
-    websocket_thread = threading.Thread(target=websocket_server.start)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/threads.py", line 25, in to_thread
-    return await loop.run_in_executor(None, func_call)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 101, in start
-    asyncio.run(self.run_server())
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
-    return future.result()
-  File "/Users/dolevgabay/Desktop/raincheck/chat/websocket_server.py", line 94, in run_server
-    self.SERVER = await websockets.serve(self.handle_client, "localhost", self.PORT)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/websockets/legacy/server.py", line 1116, in __await_impl__
-    server = await self._create_server()
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/asyncio/base_events.py", line 1513, in create_server
-    raise OSError(err.errno, 'error while attempting '
-OSError: [Errno 48] error while attempting to bind on address ('127.0.0.1', 3001): address already in use
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:23] "[35m[1mGET /start_websocket_server/3001 HTTP/1.1[0m" 500 -
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:websockets.server:server listening on [::1]:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:32] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd"}
-INFO:root:New user connected: sdcsdc
-INFO:root:Clients connected: {'0ef1a186-452d-4660-9792-06fd8aba24cd': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff1f0c6c1f0>, 1705263212.3731542)}
-INFO:root:Received message from the client: {"type":"message","userName":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd","text":"dfvdv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"sdcsdc","uuid":"0ef1a186-452d-4660-9792-06fd8aba24cd"}
-INFO:root:User disconnected: sdcsdc
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:35] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:13:35] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:14] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"243d4781-c96e-4791-a00b-389e92972b7f"}
-INFO:root:New user connected: dfvdfv
-INFO:root:Clients connected: {'243d4781-c96e-4791-a00b-389e92972b7f': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7ff2610441f0>, 1705263314.761824)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"243d4781-c96e-4791-a00b-389e92972b7f"}
-INFO:root:User disconnected: dfvdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:19] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:15:19] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:28] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290"}
-INFO:root:New user connected: dolev
-INFO:root:Clients connected: {'663f0362-7284-44e8-a983-437240987290': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fe260b1c1f0>, 1705263508.505195)}
-INFO:root:Received message from the client: {"type":"message","userName":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290","text":"dfvdfv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dolev","uuid":"663f0362-7284-44e8-a983-437240987290"}
-INFO:root:User disconnected: dolev
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:30] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:18:30] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:31:22] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:31:53] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:websockets.server:server listening on [::1]:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:18] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfv","uuid":"95a3d059-807a-4357-bf16-81a71625156a"}
-INFO:root:New user connected: dfv
-INFO:root:Clients connected: {'95a3d059-807a-4357-bf16-81a71625156a': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc879114b20>, 1705264458.8922188)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfv","uuid":"95a3d059-807a-4357-bf16-81a71625156a"}
-INFO:root:User disconnected: dfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:41] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:41] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:websockets.server:server listening on [::1]:3002
-INFO:websockets.server:server listening on 127.0.0.1:3002
-INFO:root:WebSocket server listening on ws://localhost:3002
-INFO:root:Starting WebSocket server on port 3002
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:47] "GET /start_websocket_server/3002 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"fvdffdv","uuid":"86dbe5b0-aa05-4621-bf31-21c740373488"}
-INFO:root:New user connected: fvdffdv
-INFO:root:Clients connected: {'86dbe5b0-aa05-4621-bf31-21c740373488': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fc8791162f0>, 1705264487.0713658)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"fvdffdv","uuid":"86dbe5b0-aa05-4621-bf31-21c740373488"}
-INFO:root:User disconnected: fvdffdv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3002 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:50] "POST /remove_port/3002 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3002 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:34:50] "POST /remove_port/3002 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3002 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:00] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dolev","uuid":"1075ca49-968c-48da-8ea1-3dec586cb034"}
-INFO:root:New user connected: dolev
-INFO:root:Clients connected: {'1075ca49-968c-48da-8ea1-3dec586cb034': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb4e9118b20>, 1705264500.028588)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dolev","uuid":"1075ca49-968c-48da-8ea1-3dec586cb034"}
-INFO:root:User disconnected: dolev
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:01] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:35:01] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:websockets.server:server listening on [::1]:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:19] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"7332f50e-c7ee-4262-b212-26fa9b230fbf"}
-INFO:root:New user connected: dfdfv
-INFO:root:Clients connected: {'7332f50e-c7ee-4262-b212-26fa9b230fbf': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0cb20>, 1705264939.5667572)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"7332f50e-c7ee-4262-b212-26fa9b230fbf"}
-INFO:root:User disconnected: dfdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:21] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:21] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:websockets.server:server listening on 127.0.0.1:8080
-INFO:websockets.server:server listening on [::1]:8080
-INFO:root:WebSocket server listening on ws://localhost:8080
-INFO:root:Starting WebSocket server on port 8080
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:26] "GET /start_websocket_server/8080 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfvdfv","uuid":"e6efc894-5598-415e-981d-c3f257c7ed41"}
-INFO:root:New user connected: dfvdfv
-INFO:root:Clients connected: {'e6efc894-5598-415e-981d-c3f257c7ed41': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0e2f0>, 1705264946.9089322)}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfv","uuid":"e6efc894-5598-415e-981d-c3f257c7ed41"}
-INFO:root:User disconnected: dfvdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 8080 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:28] "POST /remove_port/8080 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 8080 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:28] "POST /remove_port/8080 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 8080 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:websockets.server:server listening on [::1]:2332
-INFO:websockets.server:server listening on 127.0.0.1:2332
-INFO:root:WebSocket server listening on ws://localhost:2332
-INFO:root:Starting WebSocket server on port 2332
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:37] "GET /start_websocket_server/2332 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e"}
-INFO:root:New user connected: dfdfv
-INFO:root:Clients connected: {'d9294651-6148-4f90-9d20-9fbc7913fc7e': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fa7b8e0e650>, 1705264957.0591118)}
-INFO:root:Received message from the client: {"type":"message","userName":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e","text":"dfvdfv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"d9294651-6148-4f90-9d20-9fbc7913fc7e"}
-INFO:root:User disconnected: dfdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 2332 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:41] "POST /remove_port/2332 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 2332 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:42:41] "POST /remove_port/2332 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 2332 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Starting WebSocket server on port 8000
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:43:46] "GET /start_websocket_server/8000 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:43:46] "[33mGET / HTTP/1.1[0m" 404 -
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3000
-INFO:websockets.server:server listening on 127.0.0.1:3000
-INFO:root:WebSocket server listening on ws://localhost:3000
-INFO:root:Starting WebSocket server on port 3000
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:51] "GET /start_websocket_server/3000 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549"}
-INFO:root:New user connected: dfdfv
-INFO:root:Clients connected: {'1fca979b-4b52-47ee-9ec9-075360929549': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fd7f9124b20>, 1705265271.2087839)}
-INFO:root:Received message from the client: {"type":"message","userName":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549","text":"dfvdfv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfdfv","uuid":"1fca979b-4b52-47ee-9ec9-075360929549"}
-INFO:root:User disconnected: dfdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3000 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:57] "POST /remove_port/3000 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3000 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:47:57] "POST /remove_port/3000 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3000 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:websockets.server:server listening on [::1]:3001
-INFO:websockets.server:server listening on 127.0.0.1:3001
-INFO:root:WebSocket server listening on ws://localhost:3001
-INFO:root:Starting WebSocket server on port 3001
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:34] "GET /start_websocket_server/3001 HTTP/1.1" 200 -
-INFO:websockets.server:connection open
-INFO:root:Received message from the client: {"type":"connect","username":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8"}
-INFO:root:New user connected: dfvdfvdfv
-INFO:root:Clients connected: {'c0ca265e-1ef6-49bb-a498-fc87586684e8': (<websockets.legacy.server.WebSocketServerProtocol object at 0x7fb20824cb20>, 1705265314.343507)}
-INFO:root:Received message from the client: {"type":"message","userName":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8","text":"dfvdfv"}
-INFO:root:Received message from the client: {"type":"disconnect","username":"dfvdfvdfv","uuid":"c0ca265e-1ef6-49bb-a498-fc87586684e8"}
-INFO:root:User disconnected: dfvdfvdfv
-INFO:root:Clients connected: {}
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:root:WebSocket server on port 3001 removed from PORTS_IN_USE
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:37] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:server closing
-INFO:root:Client disconnected.
-INFO:root:No clients connected. Closing the WebSocket server.
-INFO:werkzeug:127.0.0.1 - - [14/Jan/2024 22:48:37] "POST /remove_port/3001 HTTP/1.1" 200 -
-INFO:root:HTTP request to remove port 3001 successful.
-INFO:websockets.server:connection closed
-INFO:websockets.server:server closed
-INFO:root:Stopping all threads...
-INFO:root:All threads stopped. exiting...
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
-    logger.info(f"Client {sid} connected to the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
-    logger.info(f"Client {sid} connected to the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
-    logger.info(f"Client {sid} disconnected from the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
-    logger.info(f"Client {sid} connected to the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
-    logger.info(f"Client {sid} disconnected from the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
-    logger.info(f"Client {sid} connected to the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 22, in connect
-    logger.info(f"Client {sid} connected to the main chat")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
-    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
-    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 47, in disconnect
-    group_sio = socketio.Server(cors_allowed_origins="http://localhost:3000")
-AttributeError: 'NoneType' object has no attribute 'info'
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
-    def disconnect(sid):
-NameError: name 'logging' is not defined
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
-    def disconnect(sid):
-NameError: name 'logging' is not defined
-ERROR:engineio.server:disconnect handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 658, in _handle_eio_disconnect
-    self._handle_disconnect(eio_sid, n)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 564, in _handle_disconnect
-    self._trigger_event('disconnect', namespace, sid)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 43, in disconnect
-    def disconnect(sid):
-NameError: name 'logging' is not defined
-INFO:root:Client 3ttQA7oRqNAJJQj-AAAB connected to the main chat
-INFO:root:Client ezaGfI9FOao0kte5AAAD connected to the main chat
-INFO:root:Client wva_PkMxcNW5pOtkAAAF connected to the main chat
-INFO:root:Client 3ttQA7oRqNAJJQj-AAAB disconnected from the main chat
-INFO:root:Client ezaGfI9FOao0kte5AAAD disconnected from the main chat
-INFO:root:Client wva_PkMxcNW5pOtkAAAF disconnected from the main chat
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-ERROR:engineio.server:message handler error
-Traceback (most recent call last):
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/engineio/server.py", line 434, in run_handler
-    return self.handlers[event](*args)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 640, in _handle_eio_message
-    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 534, in _handle_connect
-    success = self._trigger_event(
-  File "/Users/dolevgabay/anaconda3/lib/python3.10/site-packages/socketio/server.py", line 611, in _trigger_event
-    return handler(*args)
-  File "/Users/dolevgabay/Desktop/raincheck/chat/server/server.py", line 20, in connect
-    logging.info(f"Client {sid} connected to the main chat")
-NameError: name 'logging' is not defined
-INFO:root:Client 1qSeXu74dmOT1vmSAAAB connected to the main chat
-INFO:root:Client 0HBXZpmMnXmnk6ZZAAAD connected to the main chat
-INFO:root:Client 2rrayH49UPl-eC8PAAAF connected to the main chat
-INFO:root:Client qEl-KUrdOlLuHSF-AAAB connected to the main chat
-INFO:root:Client D-OrCW06OBN0U4gHAAAD connected to the main chat
-INFO:root:Client rIwNy0eTwfvtTlxpAAAF connected to the main chat
-INFO:root:Client oiTCxylE64X4cdTAAAAI connected to the main chat
-INFO:root:Client -O84JyfCy6vRsZ2vAAAB connected to the main chat
-INFO:root:Client 7Lli0Dk6QtgowK5MAAAD connected to the main chat
-INFO:root:Client YkGjwOdMBhApDEFUAAAF connected to the main chat
-INFO:root:Client YkGjwOdMBhApDEFUAAAF disconnected from the main chat
-INFO:root:Client 7Lli0Dk6QtgowK5MAAAD disconnected from the main chat
-INFO:root:Client 5-l5QscheKDAjGGrAAAI connected to the main chat
-INFO:root:Client 5-l5QscheKDAjGGrAAAI disconnected from the main chat
-INFO:root:Client -O84JyfCy6vRsZ2vAAAB disconnected from the main chat
-INFO:root:Client qJUCe9dnI3FjgPDUAAAB connected to the main chat
-INFO:root:Client qJUCe9dnI3FjgPDUAAAB disconnected from the main chat
-INFO:root:Client w3gs13xw1SDK_mL3AAAC connected to the main chat
-INFO:root:Message from w3gs13xw1SDK_mL3AAAC: {'clientData': {'username': 'dvfdfv', 'port': '3001'}}
+INFO:root:Client Kh6vw1zYx-FmysuzAAAB connected to the main chat
+INFO:root:Client Kh6vw1zYx-FmysuzAAAB disconnected from the main chat
+INFO:root:Client -6XItSPzarqOU0plAAAB connected to the main chat
+INFO:root:Client -6XItSPzarqOU0plAAAB disconnected from the main chat
+INFO:root:Client mGbgMIFwJWSGXO2gAAAB connected to the main chat
+INFO:root:Client mGbgMIFwJWSGXO2gAAAB disconnected from the main chat
+INFO:root:Client ZL2OSca5otd4tHl1AAAE connected to the main chat
+INFO:root:Message from ZL2OSca5otd4tHl1AAAE: {'clientData': {'username': 'dfvfdv', 'port': '3001'}}
 INFO:root:[]
-INFO:root:Client w3gs13xw1SDK_mL3AAAC disconnected from the main chat
-INFO:root:Client cVdf5hP3dWDWrN2vAAAC connected to the group chat on port 3001
-INFO:root:Client cVdf5hP3dWDWrN2vAAAC joined the group chat on port 3001 at 2024-01-16 12:17:47 with uuid 8b28e797a7464018a73039cdd76d2179
-INFO:root:[{'sid': 'cVdf5hP3dWDWrN2vAAAC', 'timestamp': '2024-01-16 12:17:47', 'uuid': '8b28e797a7464018a73039cdd76d2179'}]
-INFO:root:Notify from cVdf5hP3dWDWrN2vAAAC: dvfdfv has joined the chat.
-INFO:root:Message from cVdf5hP3dWDWrN2vAAAC: {'userName': 'dvfdfv', 'text': 'dvdvf', 'uuid': '8b28e797a7464018a73039cdd76d2179'}
-INFO:root:[{'userName': 'dvfdfv', 'text': 'dvdvf', 'uuid': '8b28e797a7464018a73039cdd76d2179', 'timestamp': '2024-01-16 12:17:48', 'sid': 'cVdf5hP3dWDWrN2vAAAC'}]
-INFO:root:Client Vc6bK3BxMV78ZYJOAAAC connected to the main chat
-INFO:root:Client Vc6bK3BxMV78ZYJOAAAC disconnected from the main chat
-INFO:root:Client HDNvrXPLlQFERePFAAAF connected to the main chat
-INFO:root:Client HDNvrXPLlQFERePFAAAF disconnected from the main chat
-INFO:root:Client 1F5tuMu4WUV2Zrr_AAAI connected to the main chat
-INFO:root:Message from 1F5tuMu4WUV2Zrr_AAAI: {'clientData': {'username': 'dfvdfv', 'port': '3001'}}
+INFO:root:Client ZL2OSca5otd4tHl1AAAE disconnected from the main chat
+INFO:root:Client T___lMk7t-O4ZBINAAAC connected to the group chat on port 3001
+INFO:root:Client T___lMk7t-O4ZBINAAAC joined the group chat on port 3001 at 2024-01-16 14:43:22 with uuid 0a35a6eeb02346f98930e3bd2fc5d816
+INFO:root:[{'sid': 'T___lMk7t-O4ZBINAAAC', 'timestamp': '2024-01-16 14:43:22', 'uuid': '0a35a6eeb02346f98930e3bd2fc5d816'}]
+INFO:root:Notify from T___lMk7t-O4ZBINAAAC: dfvfdv has joined the chat.
+INFO:root:Message from T___lMk7t-O4ZBINAAAC: {'userName': 'dfvfdv', 'text': 'dfvdfvdfv', 'uuid': '0a35a6eeb02346f98930e3bd2fc5d816'}
+INFO:root:[{'userName': 'dfvfdv', 'text': 'dfvdfvdfv', 'uuid': '0a35a6eeb02346f98930e3bd2fc5d816', 'timestamp': '2024-01-16 14:43:25', 'sid': 'T___lMk7t-O4ZBINAAAC'}]
+INFO:root:Client T___lMk7t-O4ZBINAAAC disconnected from the group chat on port 3001
 INFO:root:[]
-INFO:root:Client 1F5tuMu4WUV2Zrr_AAAI disconnected from the main chat
-INFO:root:Client lWb1CQ8UxcTMv89BAAAC connected to the main chat
-INFO:root:Message from lWb1CQ8UxcTMv89BAAAC: {'clientData': {'username': 'dfvdfv', 'port': '3001'}}
-INFO:root:Client lWb1CQ8UxcTMv89BAAAC disconnected from the main chat
-INFO:root:Client Etxa9VZSHgOnuL7_AAAB connected to the main chat
-INFO:root:Client Etxa9VZSHgOnuL7_AAAB disconnected from the main chat
-INFO:root:Client M9sRwzaGmMokQp_YAAAC connected to the main chat
-INFO:root:Message from M9sRwzaGmMokQp_YAAAC: {'clientData': {'username': 'dolev', 'port': '3001'}}
-INFO:root:[]
-INFO:root:Client M9sRwzaGmMokQp_YAAAC disconnected from the main chat
-INFO:root:Client xRRjAhxbnfC8TAAeAAAC connected to the group chat on port 3001
-INFO:root:Client xRRjAhxbnfC8TAAeAAAC joined the group chat on port 3001 at 2024-01-16 12:34:28 with uuid 4d44447576d04e689988d8324de225a3
-INFO:root:[{'sid': 'xRRjAhxbnfC8TAAeAAAC', 'timestamp': '2024-01-16 12:34:28', 'uuid': '4d44447576d04e689988d8324de225a3'}]
-INFO:root:Notify from xRRjAhxbnfC8TAAeAAAC: dolev has joined the chat.
-INFO:root:Notify from xRRjAhxbnfC8TAAeAAAC: dolev has left the chat.
-INFO:root:Client xRRjAhxbnfC8TAAeAAAC disconnected from the group chat on port 3001
-INFO:root:[]
-INFO:root:Client XvAR1Kb1VrdCD-3UAAAF connected to the main chat
-INFO:root:Message from XvAR1Kb1VrdCD-3UAAAF: {'clientData': {'username': 'dfvdfv', 'port': '3002'}}
+INFO:root:Notify from T___lMk7t-O4ZBINAAAC: dfvfdv has left the chat.
+INFO:root:Client iP4epDGKQ_QNUcveAAAH connected to the main chat
+INFO:root:Message from iP4epDGKQ_QNUcveAAAH: {'clientData': {'username': 'fdvfd', 'port': '3001'}}
 INFO:root:['3001']
-INFO:root:Client XvAR1Kb1VrdCD-3UAAAF disconnected from the main chat
-INFO:root:Client f6ss17ppqpan5XOTAAAC connected to the group chat on port 3002
-INFO:root:Client f6ss17ppqpan5XOTAAAC joined the group chat on port 3002 at 2024-01-16 12:34:54 with uuid ed75d47227ae4c869c25ee265d91cf71
-INFO:root:[{'sid': 'f6ss17ppqpan5XOTAAAC', 'timestamp': '2024-01-16 12:34:54', 'uuid': 'ed75d47227ae4c869c25ee265d91cf71'}]
-INFO:root:Notify from f6ss17ppqpan5XOTAAAC: dfvdfv has joined the chat.
-INFO:root:Client f6ss17ppqpan5XOTAAAC disconnected from the group chat on port 3002
+INFO:root:Client iP4epDGKQ_QNUcveAAAH disconnected from the main chat
+INFO:root:Client fskLzPnf7SrO1fmJAAAF connected to the group chat on port 3001
+INFO:root:Client fskLzPnf7SrO1fmJAAAF joined the group chat on port 3001 at 2024-01-16 14:43:31 with uuid cc5f94cbb998467a876f51104f319515
+INFO:root:[{'sid': 'fskLzPnf7SrO1fmJAAAF', 'timestamp': '2024-01-16 14:43:31', 'uuid': 'cc5f94cbb998467a876f51104f319515'}]
+INFO:root:Notify from fskLzPnf7SrO1fmJAAAF: fdvfd has joined the chat.
+INFO:root:Message from fskLzPnf7SrO1fmJAAAF: {'userName': 'fdvfd', 'text': 'dfvdfvdfv', 'uuid': 'cc5f94cbb998467a876f51104f319515'}
+INFO:root:[{'userName': 'dfvfdv', 'text': 'dfvdfvdfv', 'uuid': '0a35a6eeb02346f98930e3bd2fc5d816', 'timestamp': '2024-01-16 14:43:25', 'sid': 'T___lMk7t-O4ZBINAAAC'}, {'userName': 'fdvfd', 'text': 'dfvdfvdfv', 'uuid': 'cc5f94cbb998467a876f51104f319515', 'timestamp': '2024-01-16 14:43:34', 'sid': 'fskLzPnf7SrO1fmJAAAF'}]
+INFO:root:Client fskLzPnf7SrO1fmJAAAF disconnected from the group chat on port 3001
 INFO:root:[]
-INFO:root:Notify from f6ss17ppqpan5XOTAAAC: dfvdfv has left the chat.
-INFO:root:Client 0klvvyLuhgsWCYOaAAAI connected to the main chat
-INFO:root:Message from 0klvvyLuhgsWCYOaAAAI: {'clientData': {'username': 'vdfv', 'port': '3001'}}
-INFO:root:['3001', '3002']
-INFO:root:Client 0klvvyLuhgsWCYOaAAAI disconnected from the main chat
-INFO:root:Client gauAQcnWIjLKw-3GAAAF connected to the group chat on port 3001
-INFO:root:Client gauAQcnWIjLKw-3GAAAF joined the group chat on port 3001 at 2024-01-16 12:35:02 with uuid 7a6320eecede4e48bfa9821a400999d6
-INFO:root:[{'sid': 'gauAQcnWIjLKw-3GAAAF', 'timestamp': '2024-01-16 12:35:02', 'uuid': '7a6320eecede4e48bfa9821a400999d6'}]
-INFO:root:Notify from gauAQcnWIjLKw-3GAAAF: vdfv has joined the chat.
-INFO:root:Client gauAQcnWIjLKw-3GAAAF disconnected from the group chat on port 3001
+INFO:root:Notify from fskLzPnf7SrO1fmJAAAF: fdvfd has left the chat.
+INFO:root:Client SFjfDSrSooi7UEP3AAAK connected to the main chat
+INFO:root:Client SFjfDSrSooi7UEP3AAAK disconnected from the main chat
+INFO:root:Client 1F9300SFK82BEQfMAAAB connected to the main chat
+INFO:root:Message from 1F9300SFK82BEQfMAAAB: {'clientData': {'username': 'dddd', 'port': '3001'}}
 INFO:root:[]
-INFO:root:Notify from gauAQcnWIjLKw-3GAAAF: vdfv has left the chat.
-INFO:root:Client S3WmSah795z2SGR6AAAL connected to the main chat
-INFO:root:Message from S3WmSah795z2SGR6AAAL: {'clientData': {'username': 'dfvdfv', 'port': '3002'}}
-INFO:root:['3001', '3002']
-INFO:root:Client S3WmSah795z2SGR6AAAL disconnected from the main chat
-INFO:root:Client yixfd-FIxYiESE6kAAAF connected to the group chat on port 3002
-INFO:root:Client yixfd-FIxYiESE6kAAAF joined the group chat on port 3002 at 2024-01-16 12:35:10 with uuid daf7a09a8fc541f5ae9add2df987a3b0
-INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}]
-INFO:root:Notify from yixfd-FIxYiESE6kAAAF: dfvdfv has joined the chat.
-INFO:root:Message from yixfd-FIxYiESE6kAAAF: {'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}
-INFO:root:[{'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0', 'timestamp': '2024-01-16 12:35:13', 'sid': 'yixfd-FIxYiESE6kAAAF'}]
-INFO:root:Client 26shJgFHg4sQZYIHAAAO connected to the main chat
-INFO:root:Message from 26shJgFHg4sQZYIHAAAO: {'clientData': {'username': 'ddddd', 'port': '3001'}}
-INFO:root:['3001', '3002']
-INFO:root:Client 26shJgFHg4sQZYIHAAAO disconnected from the main chat
-INFO:root:Client 9HbWh7vMZPDkYejQAAAI connected to the group chat on port 3001
-INFO:root:Client 9HbWh7vMZPDkYejQAAAI joined the group chat on port 3001 at 2024-01-16 12:35:27 with uuid e29d105cae8d412d81974cd76be22757
-INFO:root:[{'sid': '9HbWh7vMZPDkYejQAAAI', 'timestamp': '2024-01-16 12:35:27', 'uuid': 'e29d105cae8d412d81974cd76be22757'}]
-INFO:root:Notify from 9HbWh7vMZPDkYejQAAAI: ddddd has joined the chat.
-INFO:root:Message from 9HbWh7vMZPDkYejQAAAI: {'userName': 'ddddd', 'text': 'dvdfvdfsv', 'uuid': 'e29d105cae8d412d81974cd76be22757'}
-INFO:root:[{'userName': 'ddddd', 'text': 'dvdfvdfsv', 'uuid': 'e29d105cae8d412d81974cd76be22757', 'timestamp': '2024-01-16 12:35:29', 'sid': '9HbWh7vMZPDkYejQAAAI'}]
-INFO:root:Client 9HbWh7vMZPDkYejQAAAI disconnected from the group chat on port 3001
+INFO:root:Client 1F9300SFK82BEQfMAAAB disconnected from the main chat
+INFO:root:Client E3KC6xrgPlvQsspsAAAC connected to the group chat on port 3001
+INFO:root:Client E3KC6xrgPlvQsspsAAAC joined the group chat on port 3001 at 2024-01-16 14:46:53 with uuid 519b2cab7e6045f9b6316cb4bdf49770
+INFO:root:[{'sid': 'E3KC6xrgPlvQsspsAAAC', 'timestamp': '2024-01-16 14:46:53', 'uuid': '519b2cab7e6045f9b6316cb4bdf49770'}]
+INFO:root:Notify from E3KC6xrgPlvQsspsAAAC: dddd has joined the chat.
+INFO:root:Message from E3KC6xrgPlvQsspsAAAC: {'userName': 'dddd', 'text': 'dfvdfvvf', 'uuid': '519b2cab7e6045f9b6316cb4bdf49770'}
+INFO:root:[{'userName': 'dddd', 'text': 'dfvdfvvf', 'uuid': '519b2cab7e6045f9b6316cb4bdf49770', 'timestamp': '2024-01-16 14:46:55', 'sid': 'E3KC6xrgPlvQsspsAAAC'}]
+INFO:root:Client E3KC6xrgPlvQsspsAAAC disconnected from the group chat on port 3001
 INFO:root:[]
-INFO:root:Notify from 9HbWh7vMZPDkYejQAAAI: ddddd has left the chat.
-INFO:root:Client 4_a40yomkfKRQFR7AAAR connected to the main chat
-INFO:root:Message from 4_a40yomkfKRQFR7AAAR: {'clientData': {'username': 'dolev', 'port': '3002'}}
-INFO:root:['3001', '3002']
-INFO:root:Client 4_a40yomkfKRQFR7AAAR disconnected from the main chat
-INFO:root:Client jvZ8deqaDsMhRJUIAAAI connected to the group chat on port 3002
-INFO:root:Client jvZ8deqaDsMhRJUIAAAI joined the group chat on port 3002 at 2024-01-16 12:35:38 with uuid fddc0cf655a64f5daddf6c88698f192e
-INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}, {'sid': 'jvZ8deqaDsMhRJUIAAAI', 'timestamp': '2024-01-16 12:35:38', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e'}]
-INFO:root:Notify from jvZ8deqaDsMhRJUIAAAI: dolev has joined the chat.
-INFO:root:Message from jvZ8deqaDsMhRJUIAAAI: {'userName': 'dolev', 'text': 'vb vb ', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e'}
-INFO:root:[{'userName': 'dfvdfv', 'text': 'dfvdfv', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0', 'timestamp': '2024-01-16 12:35:13', 'sid': 'yixfd-FIxYiESE6kAAAF'}, {'userName': 'dolev', 'text': 'vb vb ', 'uuid': 'fddc0cf655a64f5daddf6c88698f192e', 'timestamp': '2024-01-16 12:35:40', 'sid': 'jvZ8deqaDsMhRJUIAAAI'}]
-INFO:root:Client jvZ8deqaDsMhRJUIAAAI disconnected from the group chat on port 3002
-INFO:root:[{'sid': 'yixfd-FIxYiESE6kAAAF', 'timestamp': '2024-01-16 12:35:10', 'uuid': 'daf7a09a8fc541f5ae9add2df987a3b0'}]
-INFO:root:Notify from jvZ8deqaDsMhRJUIAAAI: dolev has left the chat.
-INFO:root:Client lIZdKCBypdxqgVa1AAAU connected to the main chat
-INFO:root:Client yixfd-FIxYiESE6kAAAF disconnected from the group chat on port 3002
+INFO:root:Notify from E3KC6xrgPlvQsspsAAAC: dddd has left the chat.
+INFO:root:Client oGbErvmm206nur6NAAAE connected to the main chat
+INFO:root:Client oGbErvmm206nur6NAAAE disconnected from the main chat
+INFO:root:Client 43lvQ83YGe6AEBlSAAAB connected to the main chat
+INFO:root:Client 43lvQ83YGe6AEBlSAAAB disconnected from the main chat
+INFO:root:Client SdvAz9XymUe8veRVAAAE connected to the main chat
+INFO:root:Message from SdvAz9XymUe8veRVAAAE: {'clientData': {'username': 'dfvdfv', 'port': '3001'}}
 INFO:root:[]
-INFO:root:Notify from yixfd-FIxYiESE6kAAAF: dfvdfv has left the chat.
-INFO:root:Client oPnO8NytxlDeDlY6AAAX connected to the main chat
+INFO:root:Client SdvAz9XymUe8veRVAAAE disconnected from the main chat
+INFO:root:Client u2-iEzrGLV5fainsAAAC connected to the group chat on port 3001
+INFO:root:Client u2-iEzrGLV5fainsAAAC joined the group chat on port 3001 at 2024-01-16 14:50:53 with uuid 1a940095eabd44b985db07f468aef1c3
+INFO:root:[{'sid': 'u2-iEzrGLV5fainsAAAC', 'timestamp': '2024-01-16 14:50:53', 'uuid': '1a940095eabd44b985db07f468aef1c3'}]
+INFO:root:Notify from u2-iEzrGLV5fainsAAAC: dfvdfv has joined the chat.
+INFO:root:Message from u2-iEzrGLV5fainsAAAC: {'userName': 'dfvdfv', 'text': 'dfvdfvfv', 'uuid': '1a940095eabd44b985db07f468aef1c3'}
+INFO:root:[{'userName': 'dfvdfv', 'text': 'dfvdfvfv', 'uuid': '1a940095eabd44b985db07f468aef1c3', 'timestamp': '2024-01-16 14:50:55', 'sid': 'u2-iEzrGLV5fainsAAAC'}]
+INFO:root:Notify from u2-iEzrGLV5fainsAAAC: dfvdfv has left the chat.
+INFO:root:Client u2-iEzrGLV5fainsAAAC disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Client J_lv1KaEKiSYeRs0AAAH connected to the main chat
+INFO:root:Message from J_lv1KaEKiSYeRs0AAAH: {'clientData': {'username': 'dfdfv', 'port': '3001'}}
+INFO:root:['3001']
+INFO:root:Client J_lv1KaEKiSYeRs0AAAH disconnected from the main chat
+INFO:root:Client lOF-ZeFU4KocsiIVAAAF connected to the group chat on port 3001
+INFO:root:Client lOF-ZeFU4KocsiIVAAAF joined the group chat on port 3001 at 2024-01-16 14:51:07 with uuid dfe155f2cddf4c7cb974ce45cbd72ddb
+INFO:root:[{'sid': 'lOF-ZeFU4KocsiIVAAAF', 'timestamp': '2024-01-16 14:51:07', 'uuid': 'dfe155f2cddf4c7cb974ce45cbd72ddb'}]
+INFO:root:Notify from lOF-ZeFU4KocsiIVAAAF: dfdfv has joined the chat.
+INFO:root:Client lOF-ZeFU4KocsiIVAAAF disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Notify from lOF-ZeFU4KocsiIVAAAF: dfdfv has left the chat.
+INFO:root:Client pidQM4RZ5m2TSdN5AAAK connected to the main chat
+INFO:root:Client pidQM4RZ5m2TSdN5AAAK disconnected from the main chat
+INFO:root:Client b-TVS_hS3XaCaWo0AAAC connected to the main chat
+INFO:root:Message from b-TVS_hS3XaCaWo0AAAC: {'clientData': {'username': 'dfvfdv', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client b-TVS_hS3XaCaWo0AAAC disconnected from the main chat
+INFO:root:Client 8hcVYvsEaDRDQrxSAAAC connected to the group chat on port 3001
+INFO:root:Client 8hcVYvsEaDRDQrxSAAAC joined the group chat on port 3001 at 2024-01-16 14:52:27 with uuid 341ddc9abefa42839cc4854843e9d23d
+INFO:root:[{'sid': '8hcVYvsEaDRDQrxSAAAC', 'timestamp': '2024-01-16 14:52:27', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}]
+INFO:root:Notify from 8hcVYvsEaDRDQrxSAAAC: dfvfdv has joined the chat.
+INFO:root:Message from 8hcVYvsEaDRDQrxSAAAC: {'userName': 'dfvfdv', 'text': 'efvdfv', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}
+INFO:root:[{'userName': 'dfvfdv', 'text': 'efvdfv', 'uuid': '341ddc9abefa42839cc4854843e9d23d', 'timestamp': '2024-01-16 14:52:36', 'sid': '8hcVYvsEaDRDQrxSAAAC'}]
+INFO:root:Client PtyppBIba8sEgEzJAAAF connected to the main chat
+INFO:root:Message from PtyppBIba8sEgEzJAAAF: {'clientData': {'username': 'dfvdfvv', 'port': '3001'}}
+INFO:root:['3001']
+INFO:root:Client PtyppBIba8sEgEzJAAAF disconnected from the main chat
+INFO:root:Client puNuTBumZNk0W3lyAAAF connected to the group chat on port 3001
+INFO:root:Client puNuTBumZNk0W3lyAAAF joined the group chat on port 3001 at 2024-01-16 14:52:51 with uuid f240a0b255524feeaeb5a46df24158f3
+INFO:root:[{'sid': '8hcVYvsEaDRDQrxSAAAC', 'timestamp': '2024-01-16 14:52:27', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}, {'sid': 'puNuTBumZNk0W3lyAAAF', 'timestamp': '2024-01-16 14:52:51', 'uuid': 'f240a0b255524feeaeb5a46df24158f3'}]
+INFO:root:Notify from puNuTBumZNk0W3lyAAAF: dfvdfvv has joined the chat.
+INFO:root:Message from puNuTBumZNk0W3lyAAAF: {'userName': 'dfvdfvv', 'text': 'dffv', 'uuid': 'f240a0b255524feeaeb5a46df24158f3'}
+INFO:root:[{'userName': 'dfvfdv', 'text': 'efvdfv', 'uuid': '341ddc9abefa42839cc4854843e9d23d', 'timestamp': '2024-01-16 14:52:36', 'sid': '8hcVYvsEaDRDQrxSAAAC'}, {'userName': 'dfvdfvv', 'text': 'dffv', 'uuid': 'f240a0b255524feeaeb5a46df24158f3', 'timestamp': '2024-01-16 14:52:53', 'sid': 'puNuTBumZNk0W3lyAAAF'}]
+INFO:root:Client puNuTBumZNk0W3lyAAAF disconnected from the group chat on port 3001
+INFO:root:[{'sid': '8hcVYvsEaDRDQrxSAAAC', 'timestamp': '2024-01-16 14:52:27', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}]
+INFO:root:Notify from puNuTBumZNk0W3lyAAAF: dfvdfvv has left the chat.
+INFO:root:Client uIOEpFtG98L7PCKUAAAI connected to the main chat
+INFO:root:Message from uIOEpFtG98L7PCKUAAAI: {'clientData': {'username': 'dfdvf', 'port': '3001'}}
+INFO:root:['3001']
+INFO:root:Client uIOEpFtG98L7PCKUAAAI disconnected from the main chat
+INFO:root:Client V_3OZo-SAYeqlXALAAAI connected to the group chat on port 3001
+INFO:root:Client V_3OZo-SAYeqlXALAAAI joined the group chat on port 3001 at 2024-01-16 14:52:57 with uuid f766c635da3d4d2a91e5d43843bfb092
+INFO:root:[{'sid': '8hcVYvsEaDRDQrxSAAAC', 'timestamp': '2024-01-16 14:52:27', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}, {'sid': 'V_3OZo-SAYeqlXALAAAI', 'timestamp': '2024-01-16 14:52:57', 'uuid': 'f766c635da3d4d2a91e5d43843bfb092'}]
+INFO:root:Notify from V_3OZo-SAYeqlXALAAAI: dfdvf has joined the chat.
+INFO:root:Message from V_3OZo-SAYeqlXALAAAI: {'userName': 'dfdvf', 'text': 'dfvdfv', 'uuid': 'f766c635da3d4d2a91e5d43843bfb092'}
+INFO:root:[{'userName': 'dfvfdv', 'text': 'efvdfv', 'uuid': '341ddc9abefa42839cc4854843e9d23d', 'timestamp': '2024-01-16 14:52:36', 'sid': '8hcVYvsEaDRDQrxSAAAC'}, {'userName': 'dfvdfvv', 'text': 'dffv', 'uuid': 'f240a0b255524feeaeb5a46df24158f3', 'timestamp': '2024-01-16 14:52:53', 'sid': 'puNuTBumZNk0W3lyAAAF'}, {'userName': 'dfdvf', 'text': 'dfvdfv', 'uuid': 'f766c635da3d4d2a91e5d43843bfb092', 'timestamp': '2024-01-16 14:53:00', 'sid': 'V_3OZo-SAYeqlXALAAAI'}]
+INFO:root:Client V_3OZo-SAYeqlXALAAAI disconnected from the group chat on port 3001
+INFO:root:[{'sid': '8hcVYvsEaDRDQrxSAAAC', 'timestamp': '2024-01-16 14:52:27', 'uuid': '341ddc9abefa42839cc4854843e9d23d'}]
+INFO:root:Notify from V_3OZo-SAYeqlXALAAAI: dfdvf has left the chat.
+INFO:root:Client 3kR7iffoAdL_46XxAAAL connected to the main chat
+INFO:root:Message from 3kR7iffoAdL_46XxAAAL: {'clientData': {'username': 'ev', 'port': '3002'}}
+INFO:root:['3001']
+INFO:root:Client 3kR7iffoAdL_46XxAAAL disconnected from the main chat
+INFO:root:Client sawow4XqiWrthruZAAAC connected to the group chat on port 3002
+INFO:root:Client sawow4XqiWrthruZAAAC joined the group chat on port 3002 at 2024-01-16 14:53:05 with uuid e0631406946146d8bc6484b2f4003ce7
+INFO:root:[{'sid': 'sawow4XqiWrthruZAAAC', 'timestamp': '2024-01-16 14:53:05', 'uuid': 'e0631406946146d8bc6484b2f4003ce7'}]
+INFO:root:Notify from sawow4XqiWrthruZAAAC: ev has joined the chat.
+INFO:root:Message from sawow4XqiWrthruZAAAC: {'userName': 'ev', 'text': 'dfvdfv', 'uuid': 'e0631406946146d8bc6484b2f4003ce7'}
+INFO:root:[{'userName': 'ev', 'text': 'dfvdfv', 'uuid': 'e0631406946146d8bc6484b2f4003ce7', 'timestamp': '2024-01-16 14:53:07', 'sid': 'sawow4XqiWrthruZAAAC'}]
+INFO:root:Client sawow4XqiWrthruZAAAC disconnected from the group chat on port 3002
+INFO:root:[]
+INFO:root:Notify from sawow4XqiWrthruZAAAC: ev has left the chat.
+INFO:root:Client mzwxVXPrHzhONY0ZAAAO connected to the main chat
+INFO:root:Client mzwxVXPrHzhONY0ZAAAO disconnected from the main chat
+INFO:root:Client bcMHXlNsuhYoW71qAAAB connected to the main chat
+INFO:root:Message from bcMHXlNsuhYoW71qAAAB: {'clientData': {'username': 'Dolev Gabay', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client bcMHXlNsuhYoW71qAAAB disconnected from the main chat
+INFO:root:Client 851HaMNbrR4xFnhwAAAC connected to the group chat on port 3001
+INFO:root:Client 851HaMNbrR4xFnhwAAAC joined the group chat on port 3001 at 2024-01-16 14:58:13 with uuid 29219fcb5bbb4fc0b2c4066c2ace3dda
+INFO:root:[{'sid': '851HaMNbrR4xFnhwAAAC', 'timestamp': '2024-01-16 14:58:13', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda'}]
+INFO:root:Notify from 851HaMNbrR4xFnhwAAAC: Dolev Gabay has joined the chat.
+INFO:root:Message from 851HaMNbrR4xFnhwAAAC: {'userName': 'Dolev Gabay', 'text': 'hey!', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda'}
+INFO:root:[{'userName': 'Dolev Gabay', 'text': 'hey!', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda', 'timestamp': '2024-01-16 14:58:36', 'sid': '851HaMNbrR4xFnhwAAAC'}]
+INFO:root:Client WvLso_Q-EWJVtGsxAAAE connected to the main chat
+INFO:root:Message from WvLso_Q-EWJVtGsxAAAE: {'clientData': {'username': 'John Doe', 'port': '3001'}}
+INFO:root:['3001']
+INFO:root:Client WvLso_Q-EWJVtGsxAAAE disconnected from the main chat
+INFO:root:Client c-B8rEKoipQMrRvOAAAF connected to the group chat on port 3001
+INFO:root:Client c-B8rEKoipQMrRvOAAAF joined the group chat on port 3001 at 2024-01-16 14:59:04 with uuid b78c7bf4352241409d2775ea4afb5733
+INFO:root:[{'sid': '851HaMNbrR4xFnhwAAAC', 'timestamp': '2024-01-16 14:58:13', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda'}, {'sid': 'c-B8rEKoipQMrRvOAAAF', 'timestamp': '2024-01-16 14:59:04', 'uuid': 'b78c7bf4352241409d2775ea4afb5733'}]
+INFO:root:Notify from c-B8rEKoipQMrRvOAAAF: John Doe has joined the chat.
+INFO:root:Message from c-B8rEKoipQMrRvOAAAF: {'userName': 'John Doe', 'text': 'hello!', 'uuid': 'b78c7bf4352241409d2775ea4afb5733'}
+INFO:root:[{'userName': 'Dolev Gabay', 'text': 'hey!', 'uuid': '29219fcb5bbb4fc0b2c4066c2ace3dda', 'timestamp': '2024-01-16 14:58:36', 'sid': '851HaMNbrR4xFnhwAAAC'}, {'userName': 'John Doe', 'text': 'hello!', 'uuid': 'b78c7bf4352241409d2775ea4afb5733', 'timestamp': '2024-01-16 14:59:14', 'sid': 'c-B8rEKoipQMrRvOAAAF'}]

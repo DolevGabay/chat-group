@@ -17,8 +17,11 @@ const Chat = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!username || !port || !uuid) {
+      navigate('/');
+      return;
+    }
     // Connect to the chat server
-    console.log(`C ${port}`);
     const socket = io(`http://localhost:${port}`);
     setSocketConnection(socket);
 

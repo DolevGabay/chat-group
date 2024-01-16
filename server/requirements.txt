@@ -1,5 +1,2 @@
-Flask
-websocket-server
-flask-cors
-websockets
-requests
+python-socketio==5.9.1
+eventlet==0.32.0
