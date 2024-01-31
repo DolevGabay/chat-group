@@ -6,7 +6,7 @@ import logging
 import uuid
 
 def start_group_chat(port, port_manager):
-    GROUP_SIO = socketio.Server(cors_allowed_origins="http://localhost:3000")
+    GROUP_SIO = socketio.Server(cors_allowed_origins="http://3.71.7.179:3000")
     GROUP_APP = socketio.WSGIApp(GROUP_SIO)
 
     port_manager.update_port_in_use(port)
