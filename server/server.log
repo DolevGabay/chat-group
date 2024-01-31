@@ -161,3 +161,20 @@ INFO:root:[]
 INFO:root:Notify from IFfdddGu375tWpr9AAAC: ib has left the chat.
 INFO:root:Client 6tWD25x3uswpd8DuAAAF connected to the main chat
 INFO:root:Client 6tWD25x3uswpd8DuAAAF disconnected from the main chat
+INFO:root:Client _KRimB2dStUK9PM2AAAC connected to the main chat
+INFO:root:Message from _KRimB2dStUK9PM2AAAC: {'clientData': {'username': 'd', 'port': '3001'}}
+INFO:root:[]
+INFO:root:Client _KRimB2dStUK9PM2AAAC disconnected from the main chat
+INFO:root:Client It-1VhkAIssoynCsAAAC connected to the group chat on port 3001
+INFO:root:Client It-1VhkAIssoynCsAAAC joined the group chat on port 3001 at 2024-01-24 16:37:00 with uuid d351ce495ec44897a4c127c0e94d114f
+INFO:root:[{'sid': 'It-1VhkAIssoynCsAAAC', 'timestamp': '2024-01-24 16:37:00', 'uuid': 'd351ce495ec44897a4c127c0e94d114f'}]
+INFO:root:Notify from It-1VhkAIssoynCsAAAC: d has joined the chat.
+INFO:root:Message from It-1VhkAIssoynCsAAAC: {'userName': 'd', 'text': 'ff', 'uuid': 'd351ce495ec44897a4c127c0e94d114f'}
+INFO:root:[{'userName': 'd', 'text': 'ff', 'uuid': 'd351ce495ec44897a4c127c0e94d114f', 'timestamp': '2024-01-24 16:37:03', 'sid': 'It-1VhkAIssoynCsAAAC'}]
+INFO:root:Message from It-1VhkAIssoynCsAAAC: {'userName': 'd', 'text': 'gttr', 'uuid': 'd351ce495ec44897a4c127c0e94d114f'}
+INFO:root:[{'userName': 'd', 'text': 'ff', 'uuid': 'd351ce495ec44897a4c127c0e94d114f', 'timestamp': '2024-01-24 16:37:03', 'sid': 'It-1VhkAIssoynCsAAAC'}, {'userName': 'd', 'text': 'gttr', 'uuid': 'd351ce495ec44897a4c127c0e94d114f', 'timestamp': '2024-01-24 16:37:12', 'sid': 'It-1VhkAIssoynCsAAAC'}]
+INFO:root:Client It-1VhkAIssoynCsAAAC disconnected from the group chat on port 3001
+INFO:root:[]
+INFO:root:Notify from It-1VhkAIssoynCsAAAC: d has left the chat.
+INFO:root:Client GtepO0vZ-DnU4Y9zAAAF connected to the main chat
+INFO:root:Client GtepO0vZ-DnU4Y9zAAAF disconnected from the main chat

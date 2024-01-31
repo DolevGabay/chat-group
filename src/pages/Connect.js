@@ -41,7 +41,7 @@ const Connect = () => {
 
   useEffect(() => {
     // Connect to the main server
-    const socketInstance = io('http://localhost:8000');
+    const socketInstance = io('http://3.71.7.179:8000');
     setMainSocketConnection(socketInstance);
 
     return () => {

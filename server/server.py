@@ -11,7 +11,7 @@ from PortManager import PortManager
 # Logging configuration
 configure_logging()
 
-SIO = socketio.Server(cors_allowed_origins="http://localhost:3000")
+SIO = socketio.Server(cors_allowed_origins="http://3.71.7.179:3000")
 App = socketio.WSGIApp(SIO)
 
 PORT_MANAGER = PortManager()
