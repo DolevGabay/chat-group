@@ -4,9 +4,10 @@ import threading
 from datetime import datetime
 import logging
 import uuid
+from config import SOCKET_IO_CONFIG
 
 def start_group_chat(port, port_manager):
-    GROUP_SIO = socketio.Server(cors_allowed_origins="http://localhost:3000")
+    SIO = socketio.Server(**SOCKET_IO_CONFIG)
     GROUP_APP = socketio.WSGIApp(GROUP_SIO)
 
     port_manager.update_port_in_use(port)
