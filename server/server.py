@@ -48,4 +48,4 @@ def generate_uuid():
     return uuid.uuid4().hex
 
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.listen(('localhost', 8000)), App)
+    eventlet.wsgi.server(eventlet.listen(('3.71.7.179', 8000)), App)
