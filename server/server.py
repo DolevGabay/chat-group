@@ -11,7 +11,7 @@ from PortManager import PortManager
 # Logging configuration
 configure_logging()
 
-SIO = socketio.Server(cors_allowed_origins="http://3.71.7.179:3000")
+SIO = socketio.Server(**SOCKET_IO_CONFIG)
 App = socketio.WSGIApp(SIO)
 
 PORT_MANAGER = PortManager()
@@ -48,4 +48,4 @@ def generate_uuid():
     return uuid.uuid4().hex
 
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.listen(('0.0.0.0', 8000)), App)
+    eventlet.wsgi.server(eventlet.listen(SOCKET_IO_CONFIG["server_address"]), App)
