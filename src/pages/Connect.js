@@ -96,8 +96,7 @@ const Connect = () => {
             </button>
           </form>
           <div className="register-forget opacity">
-            <a>SERVER PORT: 8000</a>           
-            <a>FRONT PORT: 3000</a>           
+            <a>POSSIBLE PORTS: 3001, 3002, 3003, 3004</a>           
           </div>
         </div>
         <div className="circle circle-two"></div>
