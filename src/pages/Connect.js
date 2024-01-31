@@ -12,7 +12,7 @@ const Connect = () => {
   const navigate = useNavigate();  // Correct hook for navigation
 
   const isValidPort = (port) => {
-    return !isNaN(port) && port >= 1024 && port <= 65535 && port !== 8000 && port !== 3000;
+    return !isNaN(port) && port >= 3001 && port <= 3004;
   };
 
   const handleConnect = () => {
