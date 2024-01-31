@@ -22,7 +22,7 @@ const Chat = () => {
       return;
     }
     // Connect to the chat server
-    const socket = io(`http://localhost:${port}`);
+    const socket = io(`http://3.71.7.179:${port}`);
     setSocketConnection(socket);
 
     return () => {
