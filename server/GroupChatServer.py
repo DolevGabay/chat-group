@@ -4,10 +4,9 @@ import threading
 from datetime import datetime
 import logging
 import uuid
-from config import SOCKET_IO_CONFIG
 
 def start_group_chat(port, port_manager):
-    GROUP_SIO = socketio.Server(**SOCKET_IO_CONFIG)
+    GROUP_SIO = socketio.Server(cors_allowed_origins="http://localhost:3000")
     GROUP_APP = socketio.WSGIApp(GROUP_SIO)
 
     port_manager.update_port_in_use(port)
@@ -65,7 +64,7 @@ def start_group_chat(port, port_manager):
             logging.info(CLIENTS)
 
     #start group chat server
-    eventlet.wsgi.server(eventlet.listen(('localhost', int(port))), GROUP_APP)
+    eventlet.wsgi.server(eventlet.listen(('3.71.7.179', int(port))), GROUP_APP)
 
 def generate_uuid():
     return uuid.uuid4().hex
