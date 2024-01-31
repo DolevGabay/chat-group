@@ -9,7 +9,6 @@ from GroupChatServer import start_group_chat
 from PortManager import PortManager
 from config import SOCKET_IO_CONFIG
 
-
 # Logging configuration
 configure_logging()
 

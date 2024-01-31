@@ -7,7 +7,7 @@ import uuid
 from config import SOCKET_IO_CONFIG
 
 def start_group_chat(port, port_manager):
-    SIO = socketio.Server(**SOCKET_IO_CONFIG)
+    GROUP_SIO = socketio.Server(**SOCKET_IO_CONFIG)
     GROUP_APP = socketio.WSGIApp(GROUP_SIO)
 
     port_manager.update_port_in_use(port)
