@@ -64,7 +64,7 @@ def start_group_chat(port, port_manager):
             logging.info(CLIENTS)
 
     #start group chat server
-    eventlet.wsgi.server(eventlet.listen(('3.71.7.179', int(port))), GROUP_APP)
+    eventlet.wsgi.server(eventlet.listen(('0.0.0.0', int(port))), GROUP_APP)
 
 def generate_uuid():
     return uuid.uuid4().hex
