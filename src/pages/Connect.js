@@ -17,7 +17,7 @@ const Connect = () => {
 
   const handleConnect = () => {
     if (!isValidPort(port)) {
-      alert('Invalid port number. Port must be between 1024 and 65535, excluding 8000 and 3000.');
+      alert('Invalid port number. Port must be between 3001 and 3004.');
       setPort('');
       return;
     }
